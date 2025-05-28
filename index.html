@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aegis IT Solutions</title>
+    <style>
+      body {
+        font-family: Arial, Tahoma, Verdana, sans-serif;
+        background: #f5f5f5;
+        color: #222;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 1.7rem;
+        font-weight: bold;
+        margin: 1.5rem 0 1rem 0;
+        text-align: center;
+        color: #1a237e;
+        letter-spacing: 1px;
+      }
+      main {
+        max-width: 820px;
+        margin: 2.5rem auto 0 auto;
+        background: #fff;
+        border: 1px solid #b0bec5;
+        border-radius: 3px;
+        box-shadow: 0 2px 8px #b0bec533;
+        padding: 2rem 2.5rem 2rem 2.5rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        font-size: 1rem;
+      }
+      th,
+      td {
+        border: 1px solid #b0bec5;
+        padding: 0.65em 0.8em;
+        text-align: left;
+      }
+      th {
+        background: #e3eaf1;
+        font-weight: 600;
+        color: #263238;
+      }
+      tr:nth-child(even) td {
+        background: #f7fafd;
+      }
+      a {
+        color: #1976d2;
+        text-decoration: underline;
+        word-break: break-all;
+      }
+      .status-checkbox {
+        text-align: center;
+        vertical-align: middle;
+        padding: 0;
+      }
+      .status-checkbox input[type="checkbox"] {
+        margin: 0;
+        display: inline-block;
+      }
+      .footer {
+        margin: 2.5rem 0 1.5rem 0;
+        text-align: center;
+        color: #888;
+        font-size: 0.97rem;
+        opacity: 0.8;
+      }
+      .add-form {
+        display: flex;
+        gap: 0.7rem;
+        margin-bottom: 1.5rem;
+        align-items: flex-end;
+      }
+      .add-form input[type="text"] {
+        padding: 0.4em 0.6em;
+        font-size: 1rem;
+        border: 1px solid #b0bec5;
+        border-radius: 3px;
+        width: 180px;
+      }
+      .add-form label {
+        font-size: 0.98rem;
+        color: #263238;
+      }
+      .add-form button {
+        padding: 0.45em 1.1em;
+        font-size: 1rem;
+        background: #e3eaf1;
+        border: 1px solid #b0bec5;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .add-form button:hover {
+        background: #d0e2f1;
+      }
+      .delete-btn {
+        background: #fff0f0;
+        border: 1px solid #e57373;
+        color: #e53935;
+        border-radius: 3px;
+        padding: 0.2em 0.7em;
+        font-size: 1em;
+        cursor: pointer;
+        margin-left: 0.5em;
+        transition: background 0.2s;
+      }
+      .delete-btn:hover {
+        background: #ffeaea;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 1rem 0.3rem;
+        }
+        table,
+        th,
+        td {
+          font-size: 0.97rem;
+        }
+        .add-form input[type="text"] {
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Aegis IT Solutions</h1>
+      <form class="add-form" id="add-page-form" autocomplete="off">
+        <label>
+          Name<br />
+          <input type="text" id="page-name" required placeholder="Page name" />
+        </label>
+        <label>
+          Link<br />
+          <input type="text" id="page-link" required placeholder="/pages/example.html" />
+        </label>
+        <button type="submit">Add</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 32%">Page Name</th>
+            <th style="width: 38%">Link</th>
+            <th style="width: 15%">Done</th>
+            <th style="width: 15%">Delete</th>
+          </tr>
+        </thead>
+        <tbody id="pages-table-body">
+          <!-- Rows will be rendered by JS -->
+        </tbody>
+      </table>
+    </main>
+    <div class="footer">Created by Dmitry Frolov</div>
+    <script>
+      // --- Storage keys ---
+      const PAGES_KEY = "zen_pages_list";
+      const STATUS_KEY = "zen_pages_status";
+
+      // --- Default pages ---
+      const defaultPages = [
+        { name: "Home", link: "/pages/index.html" },
+        { name: "404 Not Found", link: "/pages/404.html" },
+      ];
+
+      // --- Load pages from localStorage or use default ---
+      function loadPages() {
+        try {
+          const data = localStorage.getItem(PAGES_KEY);
+          if (data) return JSON.parse(data);
+        } catch {}
+        return [...defaultPages];
+      }
+
+      // --- Save pages to localStorage ---
+      function savePages(pages) {
+        localStorage.setItem(PAGES_KEY, JSON.stringify(pages));
+      }
+
+      // --- Load checked statuses from localStorage ---
+      function loadStatuses() {
+        try {
+          return JSON.parse(localStorage.getItem(STATUS_KEY) || "{}");
+        } catch {
+          return {};
+        }
+      }
+
+      // --- Save checked statuses to localStorage ---
+      function saveStatuses(statuses) {
+        localStorage.setItem(STATUS_KEY, JSON.stringify(statuses));
+      }
+
+      // --- Render table rows ---
+      function renderTable() {
+        const pages = loadPages();
+        const statuses = loadStatuses();
+        const tbody = document.getElementById("pages-table-body");
+        tbody.innerHTML = "";
+        pages.forEach((page, idx) => {
+          const tr = document.createElement("tr");
+
+          // Name
+          const tdName = document.createElement("td");
+          tdName.textContent = page.name;
+          tr.appendChild(tdName);
+
+          // Link
+          const tdLink = document.createElement("td");
+          const a = document.createElement("a");
+          a.href = page.link;
+          a.textContent = page.link;
+          a.target = "_blank";
+          tdLink.appendChild(a);
+          tr.appendChild(tdLink);
+
+          // Checkbox
+          const tdStatus = document.createElement("td");
+          tdStatus.className = "status-checkbox";
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.checked = !!statuses[page.link];
+          checkbox.addEventListener("change", () => {
+            statuses[page.link] = checkbox.checked;
+            saveStatuses(statuses);
+          });
+          tdStatus.appendChild(checkbox);
+          tr.appendChild(tdStatus);
+
+          // Delete button
+          const tdDelete = document.createElement("td");
+          const delBtn = document.createElement("button");
+          delBtn.textContent = "Delete";
+          delBtn.className = "delete-btn";
+          delBtn.addEventListener("click", () => {
+            if (confirm(`Delete page "${page.name}"?`)) {
+              const pagesArr = loadPages();
+              pagesArr.splice(idx, 1);
+              savePages(pagesArr);
+              // Remove status for this page
+              const statuses = loadStatuses();
+              delete statuses[page.link];
+              saveStatuses(statuses);
+              renderTable();
+            }
+          });
+          tdDelete.appendChild(delBtn);
+          tr.appendChild(tdDelete);
+
+          tbody.appendChild(tr);
+        });
+      }
+
+      // --- Add page form handler ---
+      document.getElementById("add-page-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("page-name").value.trim();
+        const link = document.getElementById("page-link").value.trim();
+        if (!name || !link) return;
+        const pages = loadPages();
+        // Prevent duplicates by link
+        if (pages.some(p => p.link === link)) {
+          alert("Page with this link already exists.");
+          return;
+        }
+        pages.push({ name, link });
+        savePages(pages);
+        renderTable();
+        this.reset();
+      });
+
+      renderTable();
+    </script>
+  </body>
+</html>
