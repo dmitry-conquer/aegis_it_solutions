@@ -1,0 +1,83 @@
+@use "../helpers/" as *;
+
+.what-we-do {
+  &__container {
+  }
+
+  &__header {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__row {
+    display: flex;
+    gap: rem(20);
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    background-color: var(--color-light);
+    padding: fluid(16, 24);
+    border-radius: var(--border-radius-md);
+    flex: 0 1 50%;
+    box-shadow: var(--shadow-light);
+
+    @include large {
+      flex: 0 1 100%;
+    }
+
+    h3 {
+      margin-bottom: fluid(16, 38);
+    }
+    h4 {
+      margin-bottom: rem(16);
+    }
+    p {
+      margin-bottom: fluid(16, 20);
+    }
+    a:not([class]) {
+      text-decoration: underline;
+      color: var(--color-blue);
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(12);
+    justify-content: center;
+    margin-bottom: rem(20);
+
+    @include x-small {
+      justify-content: flex-start;
+    }
+  }
+
+  &__link {
+    color: var(--color-dark-gray);
+    font-size: fluid(14, 16);
+    line-height: 1.25;
+    letter-spacing: -0.16px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--color-dark-gray);
+    padding: rem(4) rem(8);
+    text-align: center;
+    transition: all 0.2s ease;
+
+    @include x-small {
+      text-align: left;
+    }
+
+    @include hover {
+      background-color: var(--color-blue);
+      color: var(--color-white);
+      border-color: var(--color-blue);
+    }
+  }
+}
