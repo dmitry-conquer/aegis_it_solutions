@@ -302,13 +302,15 @@
   transform: translateX(100%);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: var(--color-gray);
-  padding: rem(24);
+  padding: 0;
   display: none;
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: cover;
   will-change: transform;
-  overflow: hidden;
+  @include small {
+    padding: rem(24);
+  }
 
   @include x-large {
     display: block;
@@ -323,13 +325,16 @@
 
   &__panels {
     position: relative;
-    border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
     border: 1px solid #ccc;
     background-color: var(--color-white);
     padding: rem(24);
     width: 100%;
     height: 100%;
     overflow: hidden;
+    @include small {
+      border-radius: var(--border-radius-lg);
+    }
   }
   &__panel {
     overflow: auto;
