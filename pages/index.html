@@ -8,9 +8,41 @@
   <body>
     <div class="wrapper">
       {{> header}}
-      <main></main>
+      <main>
+        <section class="front-hero">
+          <div
+            class="front-hero__container container"
+            style="background-image: url(&quot;/images/front/hero.png&quot;)"
+          >
+            <div class="front-hero__header">
+              <span class="front-hero__label">Aegis IT Solutions</span>
+              <h1 class="front-hero__title">
+                Cybersecurity & Compliance with Fully Managed, Co-Managed & Custom IT Solutions
+              </h1>
+            </div>
+            <div class="front-hero__content-wrapper">
+              <div class="front-hero__content">
+                <p>
+                  Aegis IT Solutions is a trusted leader in cybersecurity, IT services, and regulatory compliance
+                  solutions. We deliver cutting-edge protection to safeguard your business from ever-evolving digital
+                  threats. Our comprehensive suite of services, including proactive, tailored security solutions,
+                  ensures seamless operations, maximum uptime, and ironclad compliance—giving you the confidence to
+                  focus on growth.
+                </p>
+                <a href="#" class="button">Get Protected Today</a>
+              </div>
+              <div class="front-hero__slug">Secure your business in just a few steps</div>
+            </div>
+          </div>
+        </section>
+      </main>
       {{> footer}}
     </div>
+    <script>
+      const backendData = {
+        smoothScroll: true,
+      };
+    </script>
     <script type="module" src="/src/scripts/main.ts" defer></script>
   </body>
 </html>

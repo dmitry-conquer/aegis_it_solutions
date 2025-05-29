@@ -14,4 +14,8 @@
   @include hover {
     background-color: var(--color-white);
   }
+
+  @include x-small {
+    width: 100%;
+  }
 }
