@@ -1,7 +1,6 @@
 import "../styles/main.scss";
+import Header from "./components/header";
 
 document.addEventListener("DOMContentLoaded", () => {
-  /*
-    Code...
-  */
+  new Header();
 });

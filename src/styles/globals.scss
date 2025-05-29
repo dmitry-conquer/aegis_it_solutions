@@ -1,15 +1,21 @@
 @use "helpers" as *;
 
 body {
-  /*
-    font-family
-    font-size
-    color
-  */
+  font-family: var(--font-family-base);
+  color: var(--color-dark);
+  font-size: rem(20);
+  line-height: 1.4;
+  background-color: var(--color-light);
 }
 .wrapper {
   overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+  }
 }
 
 h1, .h1, //
@@ -18,14 +24,36 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
+  line-height: 1.2;
+  color: var(--color-dark);
 }
 
-a:not([class]) {
-  transition: color 0.3s ease;
-  @include hover {
-    color: var(--color-primary);
-  }
+h1,
+.h1 {
+  font-size: fluid(32, 80);
+  color: var(--color-white);
 }
+
+h2,
+.h2 {
+  font-size: fluid(24, 32);
+  font-weight: 600;
+  margin-bottom: fluid(24, 40);
+  text-align: center;
+}
+h3,
+.h3 {
+  font-size: fluid(22, 28);
+}
+
+// a:not([class]) {
+//   transition: opacity 0.3s ease;
+//   color: var(--color-blue);
+//   text-decoration: overline;
+//   @include hover {
+//     opacity: 0.8;
+//   }
+// }
 
 p:not([class]):not(:last-of-type) {
   margin-bottom: rem(16);

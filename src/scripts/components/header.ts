@@ -4,6 +4,7 @@ export class Header {
     overlay: "[data-js-header-overlay]",
     triggerButton: "[data-js-header-trigger-button]",
     itemHasSubmenu: ".has-submenu",
+    panel: "[data-js-header-panel]",
   };
   private readonly attributes: Record<string, string> = {
     ariaExpanded: "aria-expanded",
@@ -17,9 +18,11 @@ export class Header {
   private triggerButtonElement: HTMLElement | null;
   private itemHasSubmenuElements: HTMLElement[];
   private toggleElements: HTMLElement[];
+  private panels: HTMLElement[];
   private mediaQuery: MediaQueryList;
   private isMobileView: boolean;
   private isTouchDevice: boolean;
+  private historyStack: string[] = ["main"];
 
   constructor() {
     this.rootElement = document.querySelector(this.selectors.root);
@@ -28,6 +31,7 @@ export class Header {
     this.toggleElements = [this.rootElement, this.overlayElement, this.triggerButtonElement].filter(
       Boolean
     ) as HTMLElement[];
+    this.panels = Array.from(this.rootElement?.querySelectorAll(this.selectors.panel) || []) as HTMLElement[];
     this.itemHasSubmenuElements = Array.from(
       this.rootElement?.querySelectorAll(this.selectors.itemHasSubmenu) || []
     ) as HTMLElement[];
@@ -55,6 +59,7 @@ export class Header {
     const target = e.target as HTMLElement;
     if (target.closest(this.selectors.triggerButton) || target.closest(this.selectors.overlay)) return;
     this.setActive(false);
+    this.closeAllMenus();
   };
 
   private onMediaQueryChange = (e: MediaQueryListEvent): void => {
@@ -63,6 +68,40 @@ export class Header {
       this.closeAllMenus();
     }
   };
+
+  private onOverlayClick = (e: MouseEvent): void => {
+    const target = e.target as HTMLElement;
+    const nextButton = target.closest(".next-panel");
+    const backButton = target.closest(".prev-panel");
+    if (nextButton) {
+      const id = (nextButton as HTMLElement).dataset.panel;
+      if (!id) return;
+      this.historyStack.push(id);
+      this.showPanel(id);
+    }
+
+    if (backButton) {
+      this.historyStack.pop();
+      this.showPanel(this.historyStack[this.historyStack.length - 1]);
+    }
+  };
+
+  private showPanel(id: string): void {
+    this.panels.forEach(panel => {
+      panel.classList.remove("is-active", "to-right", "to-left");
+      const panelIdStr = (panel as HTMLElement).dataset.panelId;
+      if (panelIdStr !== undefined && panelIdStr === id) {
+        panel.classList.add("is-active");
+      } else if (
+        this.historyStack[this.historyStack.length - 2] &&
+        this.historyStack[this.historyStack.length - 2] === (panel as HTMLElement).dataset.panelId
+      ) {
+        panel.classList.add("to-left");
+      } else {
+        panel.classList.add("to-right");
+      }
+    });
+  }
 
   private toggleSubmenu(currentIndex: number): void {
     this.itemHasSubmenuElements.forEach((menuItem, index) => {
@@ -87,6 +126,8 @@ export class Header {
       menuItem?.classList.remove(this.stateClasses.isActive);
       subMenu.style.maxHeight = "";
     });
+    this.historyStack = ["main"];
+    this.showPanel("main");
     this.setActive(false);
   }
 
@@ -114,6 +155,7 @@ export class Header {
     this.triggerButtonElement?.addEventListener("click", this.onButtonClick);
     document.addEventListener("click", this.onDocumentClick);
     this.mediaQuery.addEventListener("change", this.onMediaQueryChange);
+    this.overlayElement?.addEventListener("click", this.onOverlayClick);
     this.itemHasSubmenuElements.forEach((item, index) => {
       const link = item.querySelector(":scope > a") as HTMLAnchorElement;
       if (!link) return;

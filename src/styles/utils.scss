@@ -21,8 +21,6 @@
   column-gap: var(--gap);
 
   &::after {
-    // background-image: url(""); // inline svg
-
     width: var(--size);
     height: var(--size);
     content: "";
@@ -30,5 +28,32 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+  }
+
+  &_blue-arrow {
+    --size: #{rem(24)};
+    --gap: #{rem(4)};
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M13.75%207.25L19.25%2012.5L13.75%2017.75M19%2012.5H4.75%22%20stroke%3D%22%233898EC%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+  &_menu-item-arrow {
+    --size: #{rem(24)};
+    --gap: #{rem(0)};
+    display: flex;
+    align-items: center;
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M15.25%2011.25L12%2014.75L8.75%2011.25%22%20stroke%3D%22%2300060F%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+    }
+  }
+  &_yellow-arrow {
+    --size: #{rem(24)};
+    --gap: #{rem(0)};
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M13.25%2015.25L9.75%2012L13.25%208.75%22%20stroke%3D%22%23FA9E0B%22%20stroke-width%3D%221.5%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+    }
   }
 }
