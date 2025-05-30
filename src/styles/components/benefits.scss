@@ -1,21 +1,6 @@
 @use "../helpers/" as *;
 
 .benefits {
-  &__container {
-  }
-
-  &__header {
-  }
-
-  &__title {
-  }
-
-  &__text {
-  }
-
-  &__body {
-  }
-
   &__list {
     display: flex;
     gap: rem(20);

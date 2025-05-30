@@ -1,0 +1,58 @@
+@use "../helpers/" as *;
+
+.trust-badges {
+  &__container {
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    @include large {
+      background-image: none !important;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: rem(24) fluid(20, 80);
+
+    @include small {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    flex: 0 1 rem(820);
+
+    @include small {
+      flex: 0 1 auto;
+    }
+
+    img {
+      margin-left: auto;
+      @include large {
+        margin: 0 auto;
+      }
+
+      @include x-small {
+        max-width: rem(170);
+      }
+    }
+  }
+
+  &__content {
+    flex: 0 1 rem(764);
+
+    @include small {
+      flex: 0 1 auto;
+    }
+    h2 {
+      text-align: left;
+      @include small {
+        text-align: center;
+      }
+    }
+    a.button {
+      margin-top: rem(24);
+    }
+  }
+}
