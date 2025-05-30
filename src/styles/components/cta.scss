@@ -1,0 +1,60 @@
+@use "../helpers/" as *;
+
+.cta {
+  margin-top: var(--section-space-y);
+  margin-bottom: var(--section-space-y);
+  padding: 0 var(--container-padding-x);
+  &__container {
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-lg);
+    padding: 0;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    flex: 0 1 rem(886);
+    img {
+      min-height: rem(200);
+      max-width: 100%;
+      object-fit: cover;
+      height: auto;
+      border-radius: var(--border-radius-lg);
+    }
+    @include large {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__content {
+    max-width: rem(646);
+    margin: 0 auto;
+    padding: fluid(16, 24);
+  }
+
+  &__text {
+    text-align: center;
+    color: var(--color-white);
+    font-weight: 300;
+    margin-bottom: rem(24);
+  }
+
+  &__buttons {
+    display: flex;
+    gap: rem(24);
+    justify-content: center;
+    @include x-small {
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    white-space: nowrap;
+  }
+}

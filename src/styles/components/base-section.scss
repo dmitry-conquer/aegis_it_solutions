@@ -1,7 +1,7 @@
 @use "../helpers/" as *;
 
 .base-section {
-  padding: rem(20);
+  padding: fluid(12, 30) var(--container-padding-x);
   &_gradient {
     .base-section__container {
       background: var(--light-gradient);
@@ -12,6 +12,8 @@
     overflow: hidden;
     padding: fluid(16, 64);
     background-color: var(--color-accent-light);
+    max-width: var(--container-width);
+    margin: 0 auto;
   }
 
   &__header {

@@ -40,4 +40,8 @@ export default defineConfig({
       partialDirectory: "components",
     }),
   ],
+
+  server: {
+    open: true, 
+  },
 });
