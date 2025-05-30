@@ -1,0 +1,69 @@
+@use "../helpers/" as *;
+
+.partners {
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    gap: rem(24) fluid(20, 80);
+
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    flex: 0 1 rem(820);
+
+    @include large {
+      padding: fluid(16, 24) fluid(16, 24) 0;
+      flex: 0 1 auto;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    max-width: 45%;
+
+    @include large {
+      max-width: 100%;
+    }
+  }
+
+  &__info {
+    color: var(--color-white);
+    margin-bottom: fluid(24, 40);
+
+    h2 {
+      color: inherit;
+      text-align: left;
+    }
+  }
+
+  &__slider-outer {
+    max-width: 100%;
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+    @media (max-width: rem(450)) {
+      display: flex !important;
+      justify-content: center;
+    }
+  }
+}

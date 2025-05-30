@@ -1,4 +1,4 @@
-class Sliders {
+export default class CardsSlider {
   private swiper = null;
   private readonly selector = "#cards-slider";
   private _resizeTimer?: number;
@@ -63,5 +63,3 @@ class Sliders {
     }, 200);
   }
 }
-
-export default Sliders;

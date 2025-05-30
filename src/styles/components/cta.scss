@@ -29,6 +29,7 @@
     }
     @include large {
       flex: 0 1 auto;
+      padding: fluid(16, 24) fluid(16, 24) 0;
     }
   }
 

@@ -1,0 +1,20 @@
+@use "../helpers/" as *;
+
+.slider-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: fluid(20, 40);
+
+  .swiper-pagination-bullet {
+    opacity: 1;
+    width: rem(13);
+    height: rem(13);
+    background-color: var(--color-blue);
+    transition: all 0.3s ease;
+    &.swiper-pagination-bullet-active {
+      background-color: var(--color-accent);
+      width: rem(55);
+      border-radius: rem(8);
+    }
+  }
+}
