@@ -1,0 +1,81 @@
+@use "../helpers" as *;
+
+.meet-experts {
+  &__container {
+  }
+
+  &__header {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__wrapper {
+  }
+
+  &__slide {
+    cursor: pointer;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    position: relative;
+    @include hover {
+      img {
+        transform: scale(1.07);
+      }
+      .meet-experts__content {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__image {
+    img {
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: fluid(30, 50);
+    left: 0;
+    color: var(--color-white);
+    border-top-right-radius: var(--border-radius-sm);
+    border-bottom-right-radius: var(--border-radius-sm);
+    background: rgba(0, 6, 15, 0.65);
+    padding: fluid(27, 47) rem(16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 87%;
+    transform: translateX(rem(-40));
+    transition: transform 0.3s ease;
+    will-change: transform;
+  }
+
+  &__content-name {
+    color: inherit;
+    font-size: fluid(22, 28);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  &__content-role {
+    color: inherit;
+    font-size: fluid(14, 16);
+    line-height: 1.25;
+    letter-spacing: -0.16px;
+  }
+}
