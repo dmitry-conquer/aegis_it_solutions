@@ -7,7 +7,7 @@ import CardsSlider from "./components/sliders/cards-slider";
 import MeetPartnersSlider from "./components/sliders/meet-experts";
 import PartnersSlider from "./components/sliders/partners-slider";
 import { initModal } from "./modal";
-import MeetExperts from "./components/meet-experts";
+import Members from "./components/members";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize header
@@ -36,5 +36,5 @@ document.addEventListener("DOMContentLoaded", () => {
     onClose: () => scroll.lenis?.start(),
   });
 
-  new MeetExperts();
+  new Members();
 });
