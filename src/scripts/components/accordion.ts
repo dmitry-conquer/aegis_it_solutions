@@ -72,6 +72,10 @@ class Accordion {
   }
 
   private onButtonClick(index: number) {
+    if (this.state.activeAccordionIndex === index) {
+      this.state.activeAccordionIndex = -1; // Collapse if already active
+      return;
+    }
     this.state.activeAccordionIndex = index;
   }
 }

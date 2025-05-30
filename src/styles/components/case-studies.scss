@@ -1,0 +1,111 @@
+@use "../helpers/" as *;
+
+.case-studies {
+  &__rows {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(20, 88);
+
+    @include large {
+      display: none;
+    }
+  }
+
+  &__row {
+    display: flex;
+    column-gap: fluid(20, 80);
+    align-items: center;
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__image {
+    flex: 0 1 rem(671);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+
+  &__content {
+    h3 {
+      color: var(--color-blue);
+      margin-bottom: rem(24);
+    }
+    strong {
+      font-weight: 600;
+      font-size: fluid(20, 24);
+    }
+  }
+
+  &__accordion {
+    @include above-large {
+      display: none;
+    }
+  }
+
+  &__accordion-item {
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__accordion-button {
+    width: 100%;
+    color: var(--color-blue);
+    font-size: rem(22);
+    font-weight: 600;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(24);
+    text-align: left;
+
+    &::after {
+      content: "";
+      width: rem(32);
+      height: rem(32);
+      background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%20fill%3D%22none%22%3E%3Cpath%20d%3D%22M16.9998%207.66699C16.9998%207.11471%2016.5521%206.66699%2015.9998%206.66699C15.4476%206.66699%2014.9998%207.11471%2014.9998%207.66699V15.0003H7.6665C7.11422%2015.0003%206.6665%2015.448%206.6665%2016.0003C6.6665%2016.5526%207.11422%2017.0003%207.6665%2017.0003H14.9998V24.3337C14.9998%2024.8859%2015.4476%2025.3337%2015.9998%2025.3337C16.5521%2025.3337%2016.9998%2024.8859%2016.9998%2024.3337V17.0003H24.3332C24.8855%2017.0003%2025.3332%2016.5526%2025.3332%2016.0003C25.3332%2015.448%2024.8855%2015.0003%2024.3332%2015.0003H16.9998V7.66699Z%22%20fill%3D%22%233898EC%22%2F%3E%3C%2Fsvg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    &.is-active {
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    will-change: max-height;
+  }
+
+  &__accordion-content-inner {
+    padding-top: rem(24);
+    h3 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    p {
+      font-size: rem(20);
+    }
+    strong {
+      font-size: rem(24);
+      font-weight: 600;
+    }
+  }
+}
