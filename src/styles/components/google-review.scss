@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.google-review {
+  &__container {
+    background-color: var(--color-dark);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+
+  &__header {
+  }
+
+  &__title {
+    color: var(--color-white);
+  }
+
+  &__body {
+    color: var(--color-white);
+  }
+}
