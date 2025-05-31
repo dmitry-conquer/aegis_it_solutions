@@ -2,6 +2,7 @@
 
 .header {
   --header-height: #{rem(121)};
+  z-index: 22;
 
   @include x-large {
     --header-height: #{rem(90)};

@@ -5,6 +5,7 @@ import BackTopButton from "./components/back-top-button";
 import AccordionCollection from "./components/accordion";
 import CardsSlider from "./components/sliders/cards-slider";
 import MeetPartnersSlider from "./components/sliders/meet-experts";
+import AboutHeroSlider from "./components/sliders/about-hero";
 import PartnersSlider from "./components/sliders/partners-slider";
 import { initModal } from "./modal";
 import Members from "./components/members";
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   new CardsSlider();
   new PartnersSlider();
   new MeetPartnersSlider();
+  new AboutHeroSlider();
 
   // Initialize accordions
   new AccordionCollection();
@@ -37,4 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   new Members();
+
+  //@ts-expect-error particlesJS is a global variable
+  if (typeof particlesJS !== "undefined") {
+    //@ts-expect-error particlesJS is a global variable
+    particlesJS.load("particles-js", "/particlesjs-config.json", function () {
+      console.log("callback - particles.js config loaded");
+    });
+  }
 });

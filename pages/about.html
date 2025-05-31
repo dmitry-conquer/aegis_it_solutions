@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css" />
+    <title>About Us</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      {{> header}}
+      <main>
+        <section class="about-hero base-section base-section_dark particles-js" id="particles-js">
+          <div class="about-hero__container base-section__container">
+            <div class="about-hero__body">
+              <div class="about-hero__heading">
+                <span class="about-hero__label">Aegis IT Solutions</span>
+                <h1 class="about-hero__title">About Us</h1>
+              </div>
+              <div class="about-hero__slider-outer">
+                <div class="about-hero__slider swiper-slider" id="about-hero-slider">
+                  <div class="about-hero__wrapper swiper-wrapper" data-lenis-prevent>
+                    <div class="about-hero__slide swiper-slide">
+                      <div class="about-hero__slide-content">
+                        <h2 data-swiper-parallax-opacity="0.5" data-swiper-parallax-x="-200">
+                          Technology That Empowers Business Growth
+                        </h2>
+                        <p data-swiper-parallax-opacity="0.5" data-swiper-parallax-x="-100">
+                          The distinct advantage of Aegis IT Solutions lies in our commitment to a business-oriented
+                          approach that seamlessly integrates high-tech solutions with a high-touch service model. We
+                          believe in technology driven by strategic business insights, where every implemented system is
+                          meticulously crafted to support and enhance the specific operational needs of the businesses
+                          we protect. This philosophy ensures that our cybersecurity and compliance strategies are not
+                          just about safeguarding against risks but are also about unlocking potential and driving
+                          business growth.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="about-hero__slide swiper-slide">
+                      <div class="about-hero__slide-content">
+                        <h2 data-swiper-parallax-opacity="0.5" data-swiper-parallax-x="-200">
+                          Optimizing Growth Through Protection
+                        </h2>
+                        <p data-swiper-parallax-opacity="0.5" data-swiper-parallax-x="-100">
+                          Our approach sets us apart by focusing on the broader business impact rather than merely
+                          technical compliance. We work closely with each client to understand their industry dynamics,
+                          operational challenges, and growth objectives. This deep dive allows us to tailor solutions
+                          that are not only secure but also optimize business processes, enhance efficiency, and improve
+                          overall performance.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="about-hero__slide swiper-slide">
+                      <div class="about-hero__slide-content">
+                        <h2 data-swiper-parallax-opacity="0.5" data-swiper-parallax-x="-200">
+                          Strategic Cybersecurity Partnership
+                        </h2>
+                        <p data-swiper-parallax-opacity="0.5" data-swiper-parallax-x="-100">
+                          At Aegis IT Solutions, we don’t see ourselves merely as a cybersecurity provider but as a
+                          strategic partner in our clients’ success. By aligning our security measures with business
+                          strategies, we ensure that our clients not only survive in an ever-evolving digital landscape
+                          but thrive in it. Our commitment to this business-oriented approach defines our unique
+                          position in the market—providing a competitive edge to our clients and reshaping how
+                          cybersecurity supports business innovation and advancement.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-hero__aside">
+              <div class="about-hero__aside-items">
+                <h3 class="about-hero__aside-item">Advantages</h3>
+                <h3 class="about-hero__aside-item">Approach</h3>
+                <h3 class="about-hero__aside-item">Partnership</h3>
+              </div>
+              <div class="about-hero__progress-bar-wrapper">
+                <div class="about-hero__progress-bar" id="progressBar"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      {{> footer}}
+    </div>
+    <script>
+      const backendData = {
+        smoothScroll: true,
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
+    <script type="module" src="/src/scripts/main.ts" defer></script>
+  </body>
+</html>
