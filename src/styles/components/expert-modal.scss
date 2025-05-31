@@ -2,12 +2,22 @@
 
 .expert-modal {
   &__inner {
+    max-width: rem(1630);
   }
 
   &__content {
+    padding: 0;
   }
 
   &__close {
+    @include hover {
+      svg {
+        color: var(--color-accent);
+      }
+    }
+    svg {
+      color: var(--color-white);
+    }
   }
 
   &__info {

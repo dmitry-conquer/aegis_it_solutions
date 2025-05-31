@@ -1,18 +1,6 @@
 @use "../helpers" as *;
 
 .meet-experts {
-  &__container {
-  }
-
-  &__header {
-  }
-
-  &__title {
-  }
-
-  &__body {
-  }
-
   &__slider {
     overflow: hidden;
   }
@@ -28,9 +16,6 @@
     @include hover {
       img {
         transform: scale(1.07);
-      }
-      .meet-experts__content {
-        transform: translateX(0);
       }
     }
   }
@@ -60,9 +45,11 @@
     text-align: center;
     width: 100%;
     max-width: 87%;
-    transform: translateX(rem(-40));
     transition: transform 0.3s ease;
-    will-change: transform;
+
+    @include large {
+      padding: rem(24) rem(16);
+    }
   }
 
   &__content-name {
@@ -80,5 +67,49 @@
   }
   &__full-information {
     display: none;
+  }
+
+  &__full-body {
+    background-color: var(--color-dark);
+    display: flex;
+    gap: rem(24) fluid(20, 80);
+    padding: fluid(60, 90) fluid(16, 64) fluid(16, 64);
+    @include medium {
+      padding-top: rem(60);
+    }
+
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__full-image {
+    flex: 0 0 30%;
+
+    @include large {
+      flex: 0 1 auto;
+      height: rem(340);
+      max-width: rem(350);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: var(--border-radius-md);
+    }
+  }
+
+  &__full-content {
+    color: var(--color-white);
+    h3 {
+      color: inherit;
+      margin-bottom: fluid(20, 40);
+      text-align: left;
+    }
+    p {
+      font-weight: 300;
+      font-size: fluid(18, 20);
+    }
   }
 }
