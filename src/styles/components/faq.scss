@@ -1,0 +1,67 @@
+@use "../helpers/" as *;
+
+.faq {
+  &__container {
+  }
+
+  &__header {
+  }
+
+  &__title {
+  }
+
+  &__body {
+  }
+
+  &__list {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: fluid(16, 24);
+    }
+  }
+
+  &__button {
+    line-height: 1.2;
+    text-align: left;
+    width: 100%;
+    font-size: fluid(18, 20);
+    font-weight: 700;
+    padding: rem(12);
+    background-color: rgba(0, 6, 15, 0.1);
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+
+    &.is-active {
+      &::before {
+        transform: rotate(45deg);
+      }
+    }
+
+    &::before {
+      content: "+";
+      font-weight: 100;
+      font-size: rem(40);
+      width: rem(24);
+      height: rem(24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    will-change: max-height;
+  }
+
+  &__content-inner {
+    padding-top: fluid(16, 24);
+    font-size: fluid(16, 20);
+  }
+}
