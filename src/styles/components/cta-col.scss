@@ -1,0 +1,33 @@
+@use "../helpers/" as *;
+
+.cta-col {
+  margin-bottom: var(--section-space-y);
+  &__container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__content {
+    color: var(--color-white);
+    text-align: center;
+    max-width: rem(1155);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(16, 24);
+    h2 {
+      color: inherit;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include x-small {
+      flex-direction: column;
+    }
+    gap: rem(24);
+  }
+}
