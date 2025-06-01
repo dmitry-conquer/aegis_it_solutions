@@ -7,6 +7,7 @@ import CardsSlider from "./components/sliders/cards-slider";
 import MeetPartnersSlider from "./components/sliders/meet-experts";
 import AboutHeroSlider from "./components/sliders/about-hero";
 import PartnersSlider from "./components/sliders/partners-slider";
+import TeamSlider from "./components/sliders/team";
 import { initModal } from "./modal";
 import Members from "./components/members";
 
@@ -27,10 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
   new PartnersSlider();
   new MeetPartnersSlider();
   new AboutHeroSlider();
+  new TeamSlider();
 
   // Initialize accordions
   new AccordionCollection();
 
+  // Initialize modal
   initModal({
     disableScroll: true,
     disableFocus: true,
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     onClose: () => scroll.lenis?.start(),
   });
 
+  // Initialize members section
   new Members();
 
   //@ts-expect-error particlesJS is a global variable

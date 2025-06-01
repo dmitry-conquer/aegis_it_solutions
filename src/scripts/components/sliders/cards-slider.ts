@@ -1,5 +1,5 @@
 export default class CardsSlider {
-  private swiper = null;
+  private swiper: typeof Swiper | null = null;
   private readonly selector = "#cards-slider";
   private _resizeTimer?: number;
 
@@ -45,12 +45,9 @@ export default class CardsSlider {
     const el = document.querySelector(this.selector);
     if (!el) return;
 
-    // @ts-expect-error Swiper is global
     if (typeof Swiper !== "undefined") {
-      // @ts-expect-error Swiper is global
       if (this.swiper) this.swiper.destroy(true, true);
 
-      // @ts-expect-error Swiper is global
       this.swiper = new Swiper(this.selector, this.getOptions());
     }
   }

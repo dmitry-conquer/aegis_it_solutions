@@ -28,11 +28,4 @@
 @use "./components/faq";
 @use "./components/cta-col";
 @use "./components/about-hero";
-
-
-.particles-js-canvas-el {
-  position: fixed;
-  top: 0;
-  z-index: 20;
-  pointer-events: none;
-}
+@use "./components/team";

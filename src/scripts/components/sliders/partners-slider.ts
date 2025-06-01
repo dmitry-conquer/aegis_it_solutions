@@ -40,10 +40,8 @@ export default class PartnersSlider {
     const el = document.querySelector(this.selector);
     if (!el) return;
 
-    // @ts-expect-error Swiper is global
     if (typeof Swiper !== "undefined") {
-      // @ts-expect-error Swiper is global
-      this.swiper = new Swiper(this.selector, this.getOptions());
+      new Swiper(this.selector, this.getOptions());
     }
   }
 }

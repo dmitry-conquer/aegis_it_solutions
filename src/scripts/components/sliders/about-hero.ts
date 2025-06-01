@@ -1,7 +1,8 @@
 export default class AboutHeroSlider {
   private readonly selector: string = "#about-hero-slider";
   private headings: HTMLElement[];
-  private swiper: any;
+  private swiper: typeof Swiper | null = null;
+  private isAnimating: boolean = false;
 
   constructor() {
     this.headings = Array.from(document.querySelectorAll(".about-hero__aside-item"));
@@ -10,17 +11,18 @@ export default class AboutHeroSlider {
 
   private getOptions() {
     return {
-      speed: 1900,
+      speed: 1200,
       direction: "vertical",
       slidesPerView: 1,
       spaceBetween: 30,
       parallax: true,
-      autoHeight: true,
       autoplay: {
         delay: 3500,
         disableOnInteraction: false,
       },
-      mousewheel: true,
+      mousewheel: {
+        releaseOnEdges: true,
+      },
       breakpoints: {
         0: {
           direction: "horizontal",
@@ -32,8 +34,17 @@ export default class AboutHeroSlider {
       on: {
         slideChange: () => this.onSlideChange(),
         afterInit: () => this.onSlideChange(),
+        slideChangeTransitionStart: () => this.onSlideChangeTransitionStart(),
+        slideChangeTransitionEnd: () => this.onSlideChangeTransitionEnd(),
       },
     };
+  }
+
+  private onSlideChangeTransitionStart() {
+    this.isAnimating = true;
+  }
+  private onSlideChangeTransitionEnd() {
+    this.isAnimating = false;
   }
 
   private onSlideChange() {
@@ -46,7 +57,7 @@ export default class AboutHeroSlider {
 
     const activeIndex = this.swiper.activeIndex;
     const activeEls = this.headings.slice(0, activeIndex + 1);
-    activeEls.forEach((heading, index) => {
+    activeEls.forEach(heading => {
       heading.classList.add("active");
     });
     const inactiveEls = this.headings.slice(activeIndex + 1);
@@ -70,11 +81,21 @@ export default class AboutHeroSlider {
     const el = document.querySelector(this.selector);
     if (!el) return;
 
-    // @ts-expect-error Swiper is global
     if (typeof Swiper !== "undefined") {
-      // @ts-expect-error Swiper is global
       this.swiper = new Swiper(this.selector, this.getOptions());
       this.updateProgressBar();
+
+      el.addEventListener(
+        "wheel",
+        e => {
+          if (this.isAnimating) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+          }
+        },
+        { passive: false }
+      );
     }
   }
 }

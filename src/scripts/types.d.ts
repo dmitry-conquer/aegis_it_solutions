@@ -1,3 +1,5 @@
+declare const Swiper: any;
+
 type TypeAccordioState = {
   activeAccordionIndex: number;
 };
