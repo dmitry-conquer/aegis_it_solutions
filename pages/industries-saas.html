@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>industries-saas</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      {{> header}}
+      <main>
+        <section class="saas-diagram base-section">
+          <div class="saas-diagram__container base-section__container">
+            <div class="base-section__header">
+              <h2 class="base-section__title">
+                Comprehensive Cybersecurity for Software-as-a-Service <br />
+                (SaaS) Companies
+              </h2>
+              <p class="base-section__text">
+                SaaS businesses face unique security challenges due to their multi-tenant architecture, API
+                integrations, and cloud-based operations. Without a robust security framework, companies risk:
+              </p>
+            </div>
+            <div class="saas-diagram__body">
+              <div class="saas-diagram__diagram">
+                <img src="/images/saas.svg" alt="#" class="saas-diagram__image" />
+                <h3 class="saas-diagram__items-title">Top Security Risks</h3>
+                <div class="saas-diagram__list saas-diagram__list_top">
+                  <div class="saas-diagram__item">
+                    <h3>
+                      Regulatory <br />
+                      Non-Compliance
+                    </h3>
+                    <p>Violations of GDPR, HIPAA, and other industry standards.</p>
+                  </div>
+                  <div class="saas-diagram__item">
+                    <h3>Downtime & Service Disruptions</h3>
+                    <p>Cyberattacks leading to financial and reputational damage.</p>
+                  </div>
+                </div>
+                <div class="saas-diagram__list saas-diagram__list_bottom">
+                  <div class="saas-diagram__item">
+                    <h3>Data Breaches</h3>
+                    <p>Exposure of sensitive customer and business data.</p>
+                  </div>
+                  <div class="saas-diagram__item">
+                    <h3>Unauthorized Access</h3>
+                    <p>Insider threats, privilege misuse, and API vulnerabilities.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      {{> footer}}
+    </div>
+    <script type="module" src="/src/scripts/main.ts" defer></script>
+  </body>
+</html>
