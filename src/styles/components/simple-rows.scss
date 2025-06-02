@@ -19,8 +19,12 @@
   align-items: center;
   gap: rem(24) fluid(24, 40);
 
-  @include medium {
-    flex-direction: column;
+  &_reverse {
+    flex-direction: row-reverse;
+
+    @include medium {
+      flex-direction: column;
+    }
   }
 
   &_big-image {
@@ -37,6 +41,10 @@
     @include medium {
       flex-direction: column;
     }
+  }
+
+  @include medium {
+    flex-direction: column;
   }
 
   &__content {
