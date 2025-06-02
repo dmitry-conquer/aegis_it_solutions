@@ -9,6 +9,7 @@ import AboutHeroSlider from "./components/sliders/about-hero";
 import PartnersSlider from "./components/sliders/partners-slider";
 import TeamSlider from "./components/sliders/team";
 import { initModal } from "./modal";
+import initHorAccordion from "./components/hor-accordion";
 import Members from "./components/members";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -43,6 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize members section
   new Members();
+
+  // Initialize horizontal accordion
+  initHorAccordion();
 
   //@ts-expect-error particlesJS is a global variable
   if (typeof particlesJS !== "undefined") {
