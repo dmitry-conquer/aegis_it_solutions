@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.saas-statistics {
+  &__row {
+    display: flex;
+    gap: rem(20);
+
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 0 1 rem(924);
+
+    @include large {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__image {
+    flex: 0 1 rem(720);
+
+    @include large {
+      flex: 0 1 auto;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-md);
+    }
+  }
+}
+
+.saas-stats-items {
+  margin-top: fluid(24, 32);
+  &__title {
+    margin-bottom: fluid(24, 32);
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    gap: rem(20);
+  }
+
+  &__item {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: rem(24);
+    box-shadow: var(--shadow-light);
+  }
+
+  &__item-term {
+    text-align: center;
+    font-size: fluid(28, 48);
+    font-weight: 600;
+    position: relative;
+    margin-bottom: rem(16);
+    padding-bottom: rem(5);
+    &::after {
+      content: "";
+      position: absolute;
+      height: rem(5);
+      width: 100%;
+      background: linear-gradient(90deg, #f7b500 0%, #3898ec 100%);
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
