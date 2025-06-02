@@ -44,11 +44,16 @@
   }
 
   &__item {
+    cursor: pointer;
     background-color: var(--color-white);
     box-shadow: 4px 0px 16px 0px rgba(0, 6, 15, 0.16);
     flex: 1 1 22%;
     padding: rem(24) rem(40);
     max-height: rem(532);
+    transition: box-shadow 0.3s ease;
+    @include hover {
+      box-shadow: 4px 0px 16px 0px rgba(0, 6, 15, 0.4);
+    }
     &.is-active {
       flex: 1 1 100%;
 

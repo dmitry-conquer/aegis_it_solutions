@@ -1,0 +1,27 @@
+@use "../helpers/" as *;
+
+.saas-choose {
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    gap: rem(20);
+  }
+
+  &__item {
+    h3 {
+      text-align: center;
+      font-size: fluid(20, 24);
+      margin-bottom: rem(16);
+    }
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: rem(24);
+    box-shadow: var(--shadow-light);
+  }
+}
