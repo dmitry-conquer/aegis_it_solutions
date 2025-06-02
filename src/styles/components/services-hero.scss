@@ -1,0 +1,58 @@
+@use "../helpers" as *;
+
+.services-hero {
+  &__container {
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: 25% 90%;
+    align-items: flex-start;
+
+    @include large {
+      background-position: center bottom;
+      background-size: 80%;
+    }
+
+    @include small {
+      background-size: cover;
+    }
+
+    @include x-small {
+      row-gap: rem(24);
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    padding-top: rem(40);
+    flex: 0 0 60%;
+
+    @include large {
+      padding-top: 0;
+    }
+
+    @include x-small {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__image {
+    flex: 0 0 40%;
+    z-index: 22;
+    padding-top: rem(60);
+
+    @include large {
+      padding-top: 0;
+    }
+
+    @include x-small {
+      max-width: rem(300);
+      margin: 0 auto;
+      flex: 0 1 auto;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

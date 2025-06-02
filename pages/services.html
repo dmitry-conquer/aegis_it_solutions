@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="wrapper">
+      {{> header}}
+      <main>
+        <section class="services-hero base-hero base-section base-section_dark">
+          <div
+            class="services-hero__container base-hero__container base-section__container"
+            style="background-image: url(&quot;/images/services-hero-bg.svg&quot;)"
+          >
+            <div class="services-hero__content base-hero__content">
+              <span class="base-hero__label">Cybersecurity Services</span>
+              <h1>Service Offerings for Aegis IT Solutions</h1>
+              <a href="#" class="button">Get Protected Today</a>
+            </div>
+            <div class="services-hero__image">
+              <img src="/images/shield-bage.png" alt="" loading="lazy" />
+            </div>
+          </div>
+        </section>
+      </main>
+      {{> footer}}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      const backendData = {
+        smoothScroll: true,
+      };
+    </script>
+    <script type="module" src="/src/scripts/main.ts" defer></script>
+  </body>
+</html>
