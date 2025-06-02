@@ -105,6 +105,9 @@
     padding: fluid(24, 36);
     color: var(--color-white);
     box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &:nth-child(1) {
       h3 {
@@ -124,7 +127,7 @@
     }
     &:nth-child(3) {
       h3 {
-        color: var(--color-blue);
+        color: var(--color-white);
       }
     }
 
@@ -149,6 +152,9 @@
       font-weight: 300;
       font-size: rem(18);
       list-style-type: disc;
+      &::marker {
+        font-size: rem(14);
+      }
 
       &:not(:last-child) {
         margin-bottom: rem(12);
