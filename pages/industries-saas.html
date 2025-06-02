@@ -8,8 +8,24 @@
   <body>
     <div class="wrapper">
       {{> header}}
-      <main>
-        <section class="simple-rows base-section">
+      <main id="particles-js">
+        <section class="hero-saas base-hero base-section base-section_dark">
+          <div class="base-hero__container base-section__container">
+            <div class="hero-saas__content base-hero__content">
+              <span class="base-hero__label">Cybersecurity For Software-as-a-Service</span>
+              <h1>Protecting Cloud-Based Businesses from Evolving Threats</h1>
+              <p>
+                With over a decade of experience in cloud security and regulatory compliance, our <br />
+                platform is trusted by leading SaaS providers to safeguard their operations and earn <br />
+                customer trust.
+              </p>
+              <a href="#" class="button">Get Protected Today</a>
+            </div>
+            <img src="/images/cubes.png" alt="" class="hero-saas__image" loading="lazy" />
+          </div>
+        </section>
+
+        <section class="simple-rows base-section z21">
           <div class="simple-rows__container base-section__container">
             <div class="base-section__header">
               <h2 class="base-section__title">
@@ -52,7 +68,7 @@
           </div>
         </section>
 
-        <section class="saas-statistics base-section base-section_blue">
+        <section class="saas-statistics base-section base-section_blue z21">
           <div class="saas-statistics__container base-section__container">
             <div class="base-section__header">
               <h2 class="base-section__title">Cybersecurity & Compliance Challenges for SaaS</h2>
@@ -114,7 +130,43 @@
           </div>
         </section>
 
-        <section class="saas-diagram base-section">
+        <section class="google-review google-review_blue base-section z21">
+          <div
+            class="google-review__container base-section__container"
+            style="background-image: url(&quot;/images/goolge-blue.svg&quot;)"
+          >
+            <div class="google-review__header base-section__header">
+              <h2 class="google-review__title base-section__title">Google Review</h2>
+            </div>
+            <div class="google-review__body">
+              <div style="text-align: center">[GOOGLE REVIEWS WIDGET]</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta z21">
+          <div class="cta__container container">
+            <div class="cta__row">
+              <div class="cta__image">
+                <img src="/images/front/cta.png" alt="" loading="lazy" />
+              </div>
+              <div class="cta__content">
+                <div class="cta__text">
+                  <p>
+                    Morem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac
+                    aliquet odio mattis.
+                  </p>
+                </div>
+                <div class="cta__buttons">
+                  <a href="#" class="button cta__button">Secure Your Business Now</a>
+                  <a href="#" class="button button_black cta__button">Speak with an Expert</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="saas-diagram base-section z21">
           <div class="saas-diagram__container base-section__container">
             <div class="base-section__header">
               <h2 class="base-section__title">
@@ -160,6 +212,12 @@
       </main>
       {{> footer}}
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script>
+      const backendData = {
+        smoothScroll: true,
+      };
+    </script>
     <script type="module" src="/src/scripts/main.ts" defer></script>
   </body>
 </html>

@@ -1,0 +1,37 @@
+@use "../helpers" as *;
+
+.hero-saas {
+  position: relative;
+
+  &__content {
+    position: relative;
+    z-index: 23;
+
+    @include large {
+      padding-bottom: rem(300);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: rem(50);
+    bottom: rem(-60);
+    z-index: 22;
+    max-width: 45%;
+
+    @include large {
+      max-width: 60%;
+      bottom: 0;
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    @include small {
+      max-width: 80%;
+    }
+
+    @include x-small {
+      max-width: 100%;
+    }
+  }
+}

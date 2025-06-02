@@ -1,0 +1,37 @@
+@use "../helpers" as *;
+
+.base-hero {
+  &__container {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    @include large {
+      min-height: auto;
+    }
+  }
+
+  &__label {
+    color: var(--color-accent);
+    font-size: fluid(20, 36);
+    line-height: 1.2;
+  }
+
+  &__content {
+    max-width: rem(980);
+  }
+
+  h1 {
+    font-size: fluid(32, 80);
+    line-height: 1.2;
+    font-weight: 400;
+    margin-bottom: rem(24);
+  }
+
+  p {
+    font-size: fluid(16, 20);
+    color: var(--color-white);
+    margin-bottom: rem(24);
+  }
+}

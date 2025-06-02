@@ -80,3 +80,9 @@ p:not([class]):not(:last-of-type) {
   padding: 0 var(--container-padding-x);
   margin: 0 auto;
 }
+
+@include large {
+  br {
+    display: none !important;
+  }
+}

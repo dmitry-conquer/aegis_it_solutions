@@ -1,6 +1,18 @@
 @use "../helpers" as *;
 
 .google-review {
+  &_blue {
+    .google-review__container {
+      background-color: var(--color-blue-light);
+    }
+    .google-review__title {
+      color: var(--color-dark);
+    }
+    .google-review__body {
+      color: var(--color-dark);
+    }
+  }
+
   &__container {
     background-color: var(--color-dark);
     background-size: 100% auto;
