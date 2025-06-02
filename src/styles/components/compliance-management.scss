@@ -1,15 +1,35 @@
 @use "../helpers/" as *;
 
 .compliance-management {
-  &__container {
-  }
-
-  &__body {
-  }
-
   &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(rem(280), 1fr));
+    gap: rem(20);
   }
 
   &__item {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    padding: fluid(16, 24);
+    box-shadow: var(--shadow-light);
+
+    h3 {
+      text-align: center;
+      font-size: fluid(20, 32);
+      font-weight: 600;
+      position: relative;
+      padding-bottom: rem(12);
+      margin-bottom: rem(16);
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: rem(5);
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, #f7b500 0%, #3898ec 100%);
+      }
+    }
   }
 }
