@@ -1,33 +1,149 @@
 @use "../helpers/" as *;
 
 .core-services {
-  &__container {
-  }
-
-  &__body {
-  }
-
   &__columns {
+    display: flex;
+    gap: rem(20);
+    margin-bottom: fluid(20, 40);
+    border-radius: var(--border-radius-md);
+
+    @include medium {
+      box-shadow: var(--shadow);
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   &__column {
+    box-shadow: var(--shadow);
+
+    background-color: #fbf9f9;
+    padding: rem(20);
+    flex: 0 1 50%;
+    border-radius: var(--border-radius-md);
+
+    @include medium {
+      box-shadow: none;
+      &:first-child {
+        padding-bottom: 0;
+      }
+    }
   }
 
   &__column-list {
+    background-color: #f2f2f2;
+    padding: rem(20);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include medium {
+      padding: 0;
+    }
   }
 
   &__column-item {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    row-gap: rem(13);
+    padding: rem(20) rem(12);
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+
+    h3 {
+      font-size: rem(20);
+    }
+
+    p {
+      font-size: rem(18);
+    }
   }
 
   &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: rem(20);
+
+    @include medium {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__grid-item {
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-md);
+    padding: fluid(24, 36);
+    color: var(--color-white);
+    box-shadow: var(--shadow);
+
+    &:nth-child(1) {
+      h3 {
+        color: var(--color-accent);
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      @include medium {
+        order: 3;
+      }
+      h3 {
+        color: var(--color-blue);
+      }
+    }
+    &:nth-child(3) {
+      h3 {
+        color: var(--color-blue);
+      }
+    }
+
+    h3 {
+      color: inherit;
+      text-align: center;
+      margin-bottom: rem(12);
+    }
+
+    h4 {
+      color: inherit;
+      font-size: rem(20);
+      font-weight: 700;
+      margin-bottom: rem(12);
+    }
+
+    ul {
+      padding-left: rem(20);
+    }
+
+    li {
+      font-weight: 300;
+      font-size: rem(18);
+      list-style-type: disc;
+
+      &:not(:last-child) {
+        margin-bottom: rem(12);
+      }
+    }
   }
 
   &__grid-item-row {
+    display: flex;
+    gap: rem(20);
+
+    @include small {
+      flex-direction: column;
+    }
   }
 
   &__grid-item-row-item {
+    flex: 0 1 50%;
   }
 }
