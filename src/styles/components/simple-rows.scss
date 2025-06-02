@@ -1,0 +1,74 @@
+@use "../helpers/" as *;
+
+.simple-rows {
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__row {
+    &:not(:last-child) {
+      margin-bottom: fluid(24, 40);
+    }
+  }
+}
+
+.simple-row {
+  display: flex;
+  align-items: center;
+  gap: rem(24) fluid(24, 40);
+
+  @include medium {
+    flex-direction: column;
+  }
+
+  &_big-image {
+    .simple-row__image {
+      flex: 0 1 65%;
+    }
+    .simple-row__content {
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    @include medium {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 0 1 50%;
+    background-color: var(--color-gray);
+    padding: fluid(16, 20);
+    border-radius: var(--border-radius-md);
+
+    @include medium {
+      flex: 0 1 auto;
+    }
+  }
+
+  &__content-inner {
+    background-color: var(--color-white);
+    padding: fluid(16, 40);
+    border-radius: var(--border-radius-md);
+  }
+
+  &__image {
+    flex: 0 1 50%;
+
+    @include medium {
+      flex: 0 1 auto;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--border-radius-md);
+      box-shadow: var(--shadow-md);
+    }
+  }
+}
