@@ -16,7 +16,6 @@
 
   &__column {
     box-shadow: var(--shadow);
-
     background-color: #fbf9f9;
     padding: rem(20);
     flex: 0 1 50%;
@@ -43,6 +42,17 @@
     }
   }
 
+  &__column-item-header {
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+    span.num {
+      color: var(--color-accent);
+      font-size: fluid(24, 28);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+  }
   &__column-item {
     flex-grow: 1;
     display: flex;
@@ -52,12 +62,24 @@
     border-radius: var(--border-radius-sm);
     row-gap: rem(13);
     padding: rem(20) rem(12);
+
     &:not(:last-child) {
       margin-bottom: rem(12);
     }
 
     h3 {
       font-size: rem(20);
+      display: flex;
+      align-items: center;
+      column-gap: rem(10);
+      font-weight: 700;
+
+      span.num {
+        color: var(--color-accent);
+        font-size: fluid(24, 28);
+        font-weight: 600;
+        line-height: 1.2;
+      }
     }
 
     p {
