@@ -1,12 +1,6 @@
 @use "../helpers" as *;
 
 .adhoc-services {
-  &__container {
-  }
-
-  &__top {
-  }
-
   &__columns {
     display: flex;
     align-items: flex-end;
