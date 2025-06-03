@@ -1,6 +1,13 @@
 @use "../helpers" as *;
 
 .rows-list {
+
+  &_transparent {
+    .rows-list__columns {
+      background-color: transparent !important;
+    }
+  }
+
   &__row {
     &:nth-child(even) {
       .rows-list__columns {
@@ -74,7 +81,7 @@
     row-gap: fluid(8, 16);
     box-shadow: var(--shadow-light);
     &:not(:last-child) {
-      margin-bottom: fluid(12, 20);
+      margin-bottom: fluid(12, 16);
     }
 
     h3 {
