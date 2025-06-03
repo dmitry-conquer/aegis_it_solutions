@@ -1,0 +1,58 @@
+@use "../helpers/" as *;
+
+.products {
+  &__columns {
+    display: flex;
+    align-items: center;
+    gap: fluid(20, 40);
+
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+
+    &_content {
+      flex: 0 1 rem(690);
+      background-color: #fbf9f9;
+      padding: fluid(16, 20);
+
+      @include large {
+        flex: 0 1 auto;
+      }
+    }
+
+    &_image {
+      flex: 0 1 rem(944);
+
+      @include large {
+        display: none;
+      }
+    }
+  }
+
+  &__column-content {
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-white);
+    padding: fluid(24, 50);
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+    ul {
+      li {
+        list-style-type: disc;
+        list-style-position: inside;
+        font-weight: 700;
+        &:not(:last-child) {
+          margin-bottom: rem(8);
+        }
+      }
+    }
+  }
+
+  &__image {
+  }
+}
