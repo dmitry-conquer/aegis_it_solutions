@@ -1,0 +1,57 @@
+@use "../helpers" as *;
+
+.offer-mic {
+  &__container {
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: rem(20);
+  }
+
+  &__item {
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius-md);
+    padding: fluid(16, 24);
+    &:nth-child(-n + 3) {
+      flex: 0 1 calc(33.333% - rem(16));
+    }
+    &:nth-child(4),
+    &:nth-child(5) {
+      flex: 0 1 calc(50% - rem(16));
+    }
+
+    &:nth-child(6) {
+      flex: 0 1 100%;
+    }
+
+    @include x-large {
+      flex: 0 1 calc(50% - rem(16)) !important;
+    }
+
+    @include medium {
+      flex: 0 1 100% !important;
+    }
+
+    h3 {
+      text-align: center;
+      font-size: fluid(20, 32);
+      font-weight: 600;
+      padding-bottom: rem(12);
+      position: relative;
+      margin-bottom: rem(12);
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: rem(5);
+        background: linear-gradient(90deg, #f7b500 0%, #3898ec 100%);
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+}
