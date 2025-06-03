@@ -1,6 +1,14 @@
 @use "../helpers" as *;
 
 .services-hero {
+  &_centered {
+    .services-hero__container {
+      align-items: center;
+      background-size: auto 100%;
+      background-position: right;
+    }
+  }
+
   &__container {
     background-repeat: no-repeat;
     background-size: auto;

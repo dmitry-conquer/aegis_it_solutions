@@ -1,0 +1,85 @@
+@use "../helpers" as *;
+
+.rows-list {
+  &__row {
+    &:nth-child(even) {
+      .rows-list__columns {
+        flex-direction: row-reverse;
+
+        @include large {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  &__columns {
+    display: flex;
+    align-items: flex-end;
+    gap: rem(20);
+    margin-bottom: fluid(20, 40);
+    padding: fluid(20, 40);
+    border-radius: var(--border-radius-md);
+    background-color: #f2f2f2;
+
+    @include large {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    &:nth-child(1) {
+      flex: 0 1 rem(860);
+    }
+    &:nth-child(2) {
+      flex: 0 1 rem(722);
+    }
+
+    @include large {
+      flex: 0 1 auto !important;
+    }
+
+    &_content {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(20, 40);
+
+      h2 {
+        margin-bottom: 0;
+        color: var(--color-accent);
+      }
+      p {
+        font-weight: 300;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-md);
+
+        @include large {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__column-item {
+    border-radius: var(--border-radius-md);
+    padding: fluid(8, 16) fluid(16, 24);
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(8, 16);
+    box-shadow: var(--shadow-light);
+    &:not(:last-child) {
+      margin-bottom: fluid(12, 20);
+    }
+
+    h3 {
+      margin-bottom: 0;
+      font-size: rem(20);
+    }
+  }
+}
