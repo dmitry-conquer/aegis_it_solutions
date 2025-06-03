@@ -12,34 +12,43 @@
 
   &__row {
     display: flex;
-    align-items: center;
     @include large {
       flex-direction: column;
     }
   }
 
   &__image {
+    position: relative;
+    z-index: 22;
     flex: 0 1 rem(886);
     img {
       min-height: rem(200);
       max-width: 100%;
       object-fit: cover;
-      height: auto;
+      width: 100%;
+      height: 100%;
       border-radius: var(--border-radius-lg);
     }
     @include large {
       flex: 0 1 auto;
-      padding: fluid(16, 24) fluid(16, 24) 0;
     }
   }
 
   &__content {
-    max-width: rem(646);
+    max-width: rem(820);
     margin: 0 auto;
     padding: fluid(16, 24);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__text {
+    h2 {
+      color: var(--color-white);
+      margin-bottom: fluid(16, 24);
+    }
+
     text-align: center;
     color: var(--color-white);
     font-weight: 300;
