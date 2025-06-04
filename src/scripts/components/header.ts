@@ -146,7 +146,7 @@ export class Header {
     this.triggerButtonElement?.setAttribute(this.attributes.ariaExpanded, String(state));
   }
 
-  private handleInteraction = (e: Event, item: HTMLElement, index: number) => {
+  private handleInteraction = (index: number) => {
     if (this.isTouchDevice || this.isMobileView) {
       this.toggleSubmenu(index);
     }
@@ -161,8 +161,8 @@ export class Header {
       const link = item.querySelector(":scope > a") as HTMLAnchorElement;
       console.log(link);
       if (!link) return;
-      link.addEventListener("click", (e: MouseEvent) => {
-        this.handleInteraction(e, item, index);
+      link.addEventListener("click", () => {
+        this.handleInteraction(index);
       });
     });
   }
