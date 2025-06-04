@@ -62,9 +62,17 @@
     }
   }
   &__nav-item {
-    position: relative;
     padding-bottom: rem(35);
     margin-bottom: rem(-35);
+    &.is-active {
+      & > .nav-content {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
     @include hover {
       & > .nav-content {
         opacity: 1;

@@ -57,7 +57,12 @@ export class Header {
 
   private onDocumentClick = (e: MouseEvent): void => {
     const target = e.target as HTMLElement;
-    if (target.closest(this.selectors.triggerButton) || target.closest(this.selectors.overlay)) return;
+    if (
+      target.closest(this.selectors.triggerButton) ||
+      target.closest(this.selectors.overlay) ||
+      target.closest(this.selectors.itemHasSubmenu)
+    )
+      return;
     this.setActive(false);
     this.closeAllMenus();
   };
@@ -105,7 +110,7 @@ export class Header {
 
   private toggleSubmenu(currentIndex: number): void {
     this.itemHasSubmenuElements.forEach((menuItem, index) => {
-      const subMenu = menuItem.querySelector("ul") as HTMLElement;
+      const subMenu = menuItem.querySelector(".nav-content") as HTMLElement;
       if (!subMenu) return;
       const active = menuItem.classList.contains(this.stateClasses.isActive);
 
@@ -121,7 +126,7 @@ export class Header {
 
   private closeAllMenus(): void {
     this.itemHasSubmenuElements.forEach(menuItem => {
-      const subMenu = menuItem.querySelector("ul") as HTMLElement;
+      const subMenu = menuItem.querySelector(".nav-content") as HTMLElement;
       if (!subMenu) return;
       menuItem?.classList.remove(this.stateClasses.isActive);
       subMenu.style.maxHeight = "";
@@ -143,11 +148,7 @@ export class Header {
 
   private handleInteraction = (e: Event, item: HTMLElement, index: number) => {
     if (this.isTouchDevice || this.isMobileView) {
-      const active = item.classList.contains(this.stateClasses.isActive);
-      if (!active) {
-        e.preventDefault();
-        this.toggleSubmenu(index);
-      }
+      this.toggleSubmenu(index);
     }
   };
 
@@ -158,6 +159,7 @@ export class Header {
     this.overlayElement?.addEventListener("click", this.onOverlayClick);
     this.itemHasSubmenuElements.forEach((item, index) => {
       const link = item.querySelector(":scope > a") as HTMLAnchorElement;
+      console.log(link);
       if (!link) return;
       link.addEventListener("click", (e: MouseEvent) => {
         this.handleInteraction(e, item, index);
