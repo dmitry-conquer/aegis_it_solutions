@@ -1,6 +1,8 @@
 @use "../helpers/" as *;
 
 .footer {
+  margin-bottom: fluid(24, 48);
+
   &__inner {
     padding: 0 rem(20);
   }
