@@ -24,7 +24,7 @@ export default class Scroll {
 
   public initAOS() {
     AOS.init({
-      duration: 700,
+      duration: 900,
       once: true,
     });
   }
