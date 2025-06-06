@@ -47,12 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize horizontal accordion
   initHorAccordion();
-
-  //@ts-expect-error particlesJS is a global variable
-  if (typeof particlesJS !== "undefined") {
-    //@ts-expect-error particlesJS is a global variable
-    particlesJS.load("particles-js", "/particlesjs-config.json", function () {
-      console.log("callback - particles.js config loaded");
-    });
-  }
 });

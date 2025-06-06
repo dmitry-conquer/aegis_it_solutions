@@ -160,6 +160,10 @@
     row-gap: rem(24);
     align-items: flex-start;
 
+    h2, h3 {
+      display: none;
+    }
+
     img {
       border-radius: 50%;
       max-width: rem(350);
