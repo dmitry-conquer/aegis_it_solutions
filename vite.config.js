@@ -16,7 +16,6 @@ export default defineConfig({
     modulePreload: false,
     rollupOptions: {
       input: {
-        main: "index.html",
         nested: "pages/index.html",
       },
       output: {
