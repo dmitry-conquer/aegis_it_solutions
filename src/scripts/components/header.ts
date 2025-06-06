@@ -159,9 +159,9 @@ export class Header {
     this.overlayElement?.addEventListener("click", this.onOverlayClick);
     this.itemHasSubmenuElements.forEach((item, index) => {
       const link = item.querySelector(":scope > a") as HTMLAnchorElement;
-      console.log(link);
       if (!link) return;
-      link.addEventListener("click", () => {
+      link.addEventListener("click", (event: MouseEvent) => {
+        event.preventDefault();
         this.handleInteraction(index);
       });
     });
