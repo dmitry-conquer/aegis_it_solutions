@@ -17,11 +17,23 @@
   position: relative;
 }
 
+.relative {
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .particles-js-canvas-el {
-  position: fixed;
+  position: absolute;
   top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 20;
   pointer-events: none;
+  object-fit: cover;
 }
 
 .inline-icon {
