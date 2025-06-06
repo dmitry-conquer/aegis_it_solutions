@@ -79,6 +79,7 @@ export class Header {
     const nextButton = target.closest(".next-panel");
     const backButton = target.closest(".prev-panel");
     if (nextButton) {
+      event?.preventDefault();
       const id = (nextButton as HTMLElement).dataset.panel;
       if (!id) return;
       this.historyStack.push(id);

@@ -1,23 +1,8 @@
 @use "../helpers" as *;
 
 .header {
-  transition: all 0.3s ease;
   z-index: 50;
-  position: fixed;
-  top: 0;
   width: 100%;
-
-  &.is-scroll {
-    .header__container {
-      height: rem(90);
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(7px);
-
-      @include medium {
-        height: rem(65);
-      }
-    }
-  }
 
   &__main {
     display: flex;
@@ -35,7 +20,6 @@
     column-gap: rem(24);
     position: relative;
     height: var(--header-height);
-    transition: all 0.3s ease;
   }
   &__logo-wrapper {
     flex-shrink: 0;
