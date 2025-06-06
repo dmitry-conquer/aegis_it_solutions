@@ -15,3 +15,15 @@ export function openModal(modalId: string) {
     disableFocus: true,
   });
 }
+
+const preventLinkClick = () => {
+  const links = document.querySelectorAll("a[data-micromodal-trigger]");
+  if (!links.length) return;
+  links.forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+    });
+  });
+};
+
+preventLinkClick();

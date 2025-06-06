@@ -30,7 +30,14 @@
                   ensures seamless operations, maximum uptime, and ironclad compliance—giving you the confidence to
                   focus on growth.
                 </p>
-                <a href="#" class="button">Get Protected Today</a>
+                <a
+                  href="#"
+                  class="button"
+                  aria-label="Open Contact Form"
+                  aria-controls="contact-form-modal"
+                  data-micromodal-trigger="contact-form-modal"
+                  >Get Protected Today</a
+                >
               </div>
               <div class="front-hero__slug">Secure your business in just a few steps</div>
             </div>
@@ -531,9 +538,9 @@
             style="background-image: url(&quot;/images/front/reviews-bg.png&quot;)"
           >
             <div class="google-review__header base-section__header">
-              <h2 data-aos="fade-up"  class="google-review__title base-section__title">Google Review</h2>
+              <h2 data-aos="fade-up" class="google-review__title base-section__title">Google Review</h2>
             </div>
-            <div data-aos="fade-up"  class="google-review__body">
+            <div data-aos="fade-up" class="google-review__body">
               <div style="text-align: center">[GOOGLE REVIEWS WIDGET]</div>
             </div>
           </div>
@@ -546,10 +553,10 @@
           >
             <div class="trust-badges__body">
               <div class="trust-badges__row">
-                <div data-aos="fade-up"  class="trust-badges__image">
+                <div data-aos="fade-up" class="trust-badges__image">
                   <img src="/images/front/hitrust-logo.png" alt="" loading="lazy" />
                 </div>
-                <div data-aos="fade-up" data-aos-delay="100"  class="trust-badges__content">
+                <div data-aos="fade-up" data-aos-delay="100" class="trust-badges__content">
                   <h2>Trust Badges</h2>
                   <p>
                     HITRUST unifies recognized standards and regulatory requirements, making it one of the most
@@ -569,7 +576,7 @@
                 <div data-aos="fade-up" data-aos-delay="100" class="partners__image">
                   <img src="/images/front/partners.png" alt="" loading="lazy" />
                 </div>
-                <div data-aos="fade-up"  class="partners__content">
+                <div data-aos="fade-up" class="partners__content">
                   <div class="partners__info">
                     <h2>Our Partners</h2>
                     <p>
@@ -995,7 +1002,7 @@
           </div>
         </section>
       </main>
-      {{> expert-modal}} {{> footer}}
+      {{> form-modal}} {{> expert-modal}} {{> footer}}
     </div>
     <script>
       const backendData = {
