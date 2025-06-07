@@ -1,65 +1,41 @@
 import "../styles/main.scss";
-import Header from "./components/header";
+import Header from "./ui-components/header";
+import BackTopButton from "./ui-components/back-top-button";
+import AccordionCollection from "./ui-components/accordion";
+import { AboutHero, Cards, MeetExperts, Partners, Team } from "./sliders";
+import initHorAccordion from "./ui-components/hor-accordion";
+import Members from "./ui-components/members";
+import ScrollHeader from "./ui-components/scroll-header";
 import Scroll from "./scroll";
-import BackTopButton from "./components/back-top-button";
-import AccordionCollection from "./components/accordion";
-import CardsSlider from "./components/sliders/cards-slider";
-import MeetPartnersSlider from "./components/sliders/meet-experts";
-import AboutHeroSlider from "./components/sliders/about-hero";
-import PartnersSlider from "./components/sliders/partners-slider";
-import TeamSlider from "./components/sliders/team";
 import { initModal } from "./modal";
-import initHorAccordion from "./components/hor-accordion";
-import Members from "./components/members";
-import ScrollHeader from "./components/scroll-header";
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Initialize header
-  new Header();
+const scroll = new Scroll();
 
-  // Initialize back to top button
-  new BackTopButton(900, "top");
-
-  // Initialize scroll header
-  new ScrollHeader(30);
-
-  // Initialize smooth scroll and AOS
-  const scroll = new Scroll();
+const initScrollServices = () => {
   scroll.initSmoothScroll();
   scroll.initAOS();
+};
 
-  // Initialize sliders
-  new CardsSlider();
-  new PartnersSlider();
-  new MeetPartnersSlider();
-  new AboutHeroSlider();
-  new TeamSlider();
+const initSliders = () => {
+  new AboutHero();
+  new Cards();
+  new MeetExperts();
+  new Partners();
+  new Team();
+};
 
-  // Initialize accordions
+const initUIComponents = () => {
+  new Header(scroll);
+  new BackTopButton(900, "top");
+  new ScrollHeader(30);
+  new Members(scroll);
   new AccordionCollection();
-
-  // Initialize modal
-  initModal({
-    disableScroll: true,
-    disableFocus: true,
-    onShow: () => scroll.lenis?.stop(),
-    onClose: () => scroll.lenis?.start(),
-  });
-
-  // Initialize members section
-  new Members();
-
-  // Initialize horizontal accordion
   initHorAccordion();
+  initModal(scroll);
+};
 
-  const documentElement = document.documentElement;
-  const observer = new MutationObserver(() => {
-    if (documentElement.classList.contains("is-lock")) {
-      scroll.lenis?.stop();
-    } else {
-      scroll.lenis?.start?.();
-    }
-  });
-
-  observer.observe(documentElement, { attributes: true, attributeFilter: ["class"] });
+document.addEventListener("DOMContentLoaded", () => {
+  initSliders();
+  initUIComponents();
+  initScrollServices();
 });

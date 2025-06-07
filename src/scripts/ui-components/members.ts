@@ -9,8 +9,10 @@ export default class Members {
   };
   private rootElement: HTMLElement;
   private slotElement: HTMLElement;
+  private scroll: any;
 
-  constructor() {
+  constructor(scroll: any) {
+    this.scroll = scroll;
     this.rootElement = document.querySelector(this.selectors.root) as HTMLElement;
     this.slotElement = document.querySelector(this.selectors.slot) as HTMLElement;
     if (!this.rootElement || !this.slotElement) return;
@@ -24,7 +26,7 @@ export default class Members {
     const memberInfoElement = memberCard.querySelector(this.selectors.fullInfo) as HTMLElement;
     if (!memberInfoElement) return;
     this.slotElement.innerHTML = memberInfoElement.innerHTML;
-    openModal("expert-modal");
+    openModal("expert-modal", this.scroll);
   };
 
   private bindEvents() {

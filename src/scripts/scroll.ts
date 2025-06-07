@@ -8,10 +8,10 @@ declare const backendData: {
 };
 
 export default class Scroll {
-  public lenis: Lenis | null = null;
+  private lenis: Lenis | null = null;
 
-  private isSmoothScrollReady() {
-    return typeof backendData !== "undefined" && backendData.smoothScroll;
+  private isSmoothScrollReady(): boolean {
+    return typeof backendData !== "undefined" && !!backendData.smoothScroll;
   }
 
   public initSmoothScroll() {
@@ -27,5 +27,17 @@ export default class Scroll {
       duration: 900,
       once: true,
     });
+  }
+
+  public stop() {
+    this.lenis?.stop();
+  }
+
+  public start() {
+    this.lenis?.start();
+  }
+
+  public getLenis(): Lenis | null {
+    return this.lenis;
   }
 }
