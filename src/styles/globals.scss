@@ -1,16 +1,5 @@
 @use "helpers" as *;
 
-html {
-  &.is-lock {
-    overflow: hidden;
-    height: 100vh !important;
-    body {
-      overflow: hidden;
-      height: 100vh !important;
-    }
-  }
-}
-
 body {
   font-family: var(--font-family-base);
   color: var(--color-dark);
@@ -26,6 +15,7 @@ body {
   min-height: 100vh;
   main {
     flex-grow: 1;
+    padding-top: var(--header-height);
   }
 }
 
@@ -73,6 +63,11 @@ h4,
 
 p:not([class]):not(:last-of-type) {
   margin-bottom: rem(16);
+}
+
+strong,
+b {
+  font-weight: 700 !important;
 }
 
 .container {

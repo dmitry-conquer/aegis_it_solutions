@@ -24,6 +24,9 @@
   @include x-large {
     --header-height: #{rem(90)};
   }
+  @include small {
+    --header-height: #{rem(70)};
+  }
 
   --container-width: #{rem(1792)};
   --container-padding-x: #{rem(20)};

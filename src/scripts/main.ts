@@ -11,6 +11,7 @@ import TeamSlider from "./components/sliders/team";
 import { initModal } from "./modal";
 import initHorAccordion from "./components/hor-accordion";
 import Members from "./components/members";
+import ScrollHeader from "./components/scroll-header";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Initialize header
@@ -18,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize back to top button
   new BackTopButton(900, "top");
+
+  // Initialize scroll header
+  new ScrollHeader(30);
 
   // Initialize smooth scroll and AOS
   const scroll = new Scroll();
@@ -47,4 +51,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initialize horizontal accordion
   initHorAccordion();
+
+  const documentElement = document.documentElement;
+  const observer = new MutationObserver(() => {
+    if (documentElement.classList.contains("is-lock")) {
+      scroll.lenis?.stop();
+    } else {
+      scroll.lenis?.start?.();
+    }
+  });
+
+  observer.observe(documentElement, { attributes: true, attributeFilter: ["class"] });
 });

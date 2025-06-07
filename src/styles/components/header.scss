@@ -3,6 +3,20 @@
 .header {
   z-index: 50;
   width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  &.is-scroll {
+    .header__container {
+      height: rem(90);
+      backdrop-filter: blur(7px);
+      background-color: rgba(255, 255, 255, 0.8);
+      @include x-large {
+        height: var(--header-height);
+      }
+    }
+  }
 
   &__main {
     display: flex;
@@ -20,6 +34,7 @@
     column-gap: rem(24);
     position: relative;
     height: var(--header-height);
+    transition: all 0.3s ease;
   }
   &__logo-wrapper {
     flex-shrink: 0;
