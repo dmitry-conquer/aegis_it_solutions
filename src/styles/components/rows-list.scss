@@ -8,6 +8,9 @@
   }
 
   &__row {
+    &:not(:last-child) {
+      margin-bottom: fluid(20, 40);
+    }
     &:nth-child(even) {
       .rows-list__columns {
         flex-direction: row-reverse;
@@ -22,7 +25,6 @@
   &__columns {
     display: flex;
     gap: rem(20);
-    margin-bottom: fluid(20, 40);
     padding: fluid(20, 40);
     border-radius: var(--border-radius-md);
     background-color: #f2f2f2;

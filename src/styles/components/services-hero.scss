@@ -6,6 +6,13 @@
       align-items: center;
       background-size: auto 100%;
       background-position: right;
+      padding: fluid(36, 64) fluid(24, 64) fluid(36, 64) fluid(24, 64);
+
+      @include x-small {
+        padding-bottom: rem(300);
+        background-size: 150% auto;
+        background-position: bottom center;
+      }
     }
   }
 
