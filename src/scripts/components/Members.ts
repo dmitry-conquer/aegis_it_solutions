@@ -1,4 +1,4 @@
-import { openModal } from "../modal";
+import { openModal } from "../utils/modal";
 
 export default class Members {
   private selectors: Record<string, string> = {

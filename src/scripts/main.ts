@@ -1,13 +1,8 @@
 import "../styles/main.scss";
-import Header from "./ui-components/header";
-import BackTopButton from "./ui-components/back-top-button";
-import AccordionCollection from "./ui-components/accordion";
 import { AboutHero, Cards, MeetExperts, Partners, Team } from "./sliders";
-import initHorAccordion from "./ui-components/hor-accordion";
-import Members from "./ui-components/members";
-import ScrollHeader from "./ui-components/scroll-header";
-import Scroll from "./scroll";
-import { initModal } from "./modal";
+import { Accordion, Header, BackTopButton, Members, ScrollHeader, HorizontalAccordion } from "./components";
+import { Scroll } from "./services";
+import { initModal } from "./utils";
 
 const scroll = new Scroll();
 
@@ -29,8 +24,8 @@ const initUIComponents = () => {
   new BackTopButton(900, "top");
   new ScrollHeader(30);
   new Members(scroll);
-  new AccordionCollection();
-  initHorAccordion();
+  new Accordion();
+  HorizontalAccordion();
   initModal(scroll);
 };
 
