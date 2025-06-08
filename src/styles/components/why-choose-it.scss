@@ -1,0 +1,30 @@
+@use "../helpers/" as *;
+
+.why-choose-it {
+  &__container {
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(280), 1fr));
+    gap: rem(20);
+  }
+
+  &__item {
+    background: var(--color-white);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-light);
+    padding: fluid(16, 24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: rem(16);
+
+    h3 {
+      text-align: center;
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+}
