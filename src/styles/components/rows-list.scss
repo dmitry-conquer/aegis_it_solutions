@@ -1,7 +1,6 @@
 @use "../helpers" as *;
 
 .rows-list {
-
   &_transparent {
     .rows-list__columns {
       background-color: transparent !important;
@@ -22,7 +21,6 @@
 
   &__columns {
     display: flex;
-    align-items: flex-end;
     gap: rem(20);
     margin-bottom: fluid(20, 40);
     padding: fluid(20, 40);
@@ -51,13 +49,17 @@
       display: flex;
       flex-direction: column;
       row-gap: fluid(20, 40);
+      height: 100%;
 
-      h2 {
+      h3 {
+        text-align: center;
         margin-bottom: 0;
         color: var(--color-accent);
+        font-size: fluid(22, 28);
       }
       p {
         font-weight: 300;
+        margin-bottom: 0 !important;
       }
       img {
         width: 100%;
@@ -70,9 +72,15 @@
         }
       }
     }
+
+    &_list {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__column-item {
+    justify-content: center;
     border-radius: var(--border-radius-md);
     padding: fluid(8, 16) fluid(16, 24);
     background-color: var(--color-white);
@@ -80,6 +88,7 @@
     flex-direction: column;
     row-gap: fluid(8, 16);
     box-shadow: var(--shadow-light);
+    flex-grow: 1;
     &:not(:last-child) {
       margin-bottom: fluid(12, 16);
     }
