@@ -67,5 +67,16 @@
   &__content-inner {
     padding-top: fluid(16, 24);
     font-size: fluid(16, 20);
+
+    ul {
+      padding-left: rem(18);
+      li {
+        list-style-type: disc;
+        list-style-position: inside;
+        &::marker {
+          font-size: rem(14);
+        }
+      }
+    }
   }
 }
