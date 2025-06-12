@@ -1,7 +1,10 @@
 @use "../helpers" as *;
 
 .hero-saas {
-  position: relative;
+  &__container {
+    position: relative;
+    overflow: visible;
+  }
 
   &__content {
     position: relative;
@@ -18,6 +21,10 @@
     bottom: rem(-60);
     z-index: 22;
     max-width: 45%;
+
+    &_sphe {
+      right: 0;
+    }
 
     @include large {
       max-width: 60%;

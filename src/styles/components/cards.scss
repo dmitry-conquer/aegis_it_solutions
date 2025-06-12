@@ -1,0 +1,89 @@
+@use "../helpers/" as *;
+
+.cards {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+    gap: fluid(0, 40);
+
+    @include small {
+      display: none;
+    }
+  }
+
+  &__item {
+    background-color: var(--color-white);
+    padding: rem(24) rem(24);
+    box-shadow: var(--shadow-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item-image {
+    margin-bottom: rem(8);
+    max-width: rem(264);
+  }
+
+  &__item-title {
+    color: var(--color-black);
+    font-size: rem(24);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: rem(24);
+  }
+
+  &__item-text {
+    font-weight: 300;
+  }
+
+  &__accordion {
+    margin-top: rem(40);
+
+    @include above-small {
+      display: none;
+    }
+  }
+
+  &__accordion-item {
+    padding: fluid(16, 24);
+    background-color: var(--color-white);
+    box-shadow: var(--shadow-light);
+
+    &:not(:last-child) {
+      margin-bottom: rem(24);
+    }
+  }
+
+  &__accordion-button {
+    color: var(--color-black);
+    font-size: rem(20);
+    font-weight: 700;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(40);
+    width: 100%;
+  }
+
+  &__accordio-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    will-change: max-height;
+  }
+
+  &__accordion-content-inner {
+    padding-top: rem(24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__accordion-text {
+  }
+
+  &__accordion-image {
+  }
+}

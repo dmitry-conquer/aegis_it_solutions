@@ -1,0 +1,96 @@
+@use "../helpers" as *;
+
+.light-columns {
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__columns {
+    display: flex;
+    gap: rem(20);
+    margin-bottom: fluid(20, 40);
+    border-radius: var(--border-radius-md);
+
+    @include medium {
+      box-shadow: var(--shadow);
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__column {
+    box-shadow: var(--shadow);
+    background-color: #fbf9f9;
+    padding: rem(20);
+    flex: 0 1 50%;
+    border-radius: var(--border-radius-md);
+
+    @include medium {
+      box-shadow: none;
+      &:first-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__column-list {
+    background-color: #f2f2f2;
+    padding: rem(20);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include medium {
+      padding: 0;
+    }
+  }
+
+  &__column-item-header {
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+    span.num {
+      color: var(--color-accent);
+      font-size: fluid(24, 28);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+  }
+  &__column-item {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    row-gap: rem(13);
+    padding: rem(20) rem(12);
+
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+
+    h3 {
+      font-size: rem(20);
+      display: flex;
+      align-items: center;
+      column-gap: rem(10);
+      font-weight: 700;
+
+      span.num {
+        color: var(--color-accent);
+        font-size: fluid(24, 28);
+        font-weight: 600;
+        line-height: 1.2;
+      }
+    }
+
+    p,
+    li {
+      font-size: rem(20);
+    }
+  }
+}

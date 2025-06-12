@@ -1,9 +1,6 @@
 @use "../helpers" as *;
 
 .offer-mic {
-  &__container {
-  }
-
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -54,4 +51,12 @@
       }
     }
   }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: fluid(20, 40);
+  }
+
+  &__button {}
 }

@@ -12,7 +12,7 @@ export default class Scroll {
       anchors: true,
     });
 
-    this.bubbleScrollAtEdge();
+    // this.bubbleScrollAtEdge();
   }
 
   public initAOS() {

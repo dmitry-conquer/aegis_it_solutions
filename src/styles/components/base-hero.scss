@@ -4,6 +4,8 @@
   padding-top: 0;
 
   &__container {
+    padding-top: fluid(32, 210);
+    padding-bottom: fluid(32, 210);
     min-height: 100vh;
 
     display: flex;
