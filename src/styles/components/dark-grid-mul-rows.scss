@@ -46,6 +46,9 @@
       font-weight: 300;
       font-size: fluid(16, 18);
     }
+    p {
+      margin-bottom: rem(16);
+    }
     ul {
       columns: 2;
       -webkit-columns: 2;
