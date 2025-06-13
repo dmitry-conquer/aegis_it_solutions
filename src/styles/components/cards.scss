@@ -81,9 +81,20 @@
     align-items: center;
   }
 
-  &__accordion-text {
+  &__footer {
+    margin-top: fluid(24, 40);
+    display: flex;
+    gap: rem(16) fluid(20, 80);
+
+    @include medium {
+      flex-direction: column;
+    }
   }
 
-  &__accordion-image {
+  &__footer-item {
+    p {
+      font-weight: 300;
+      font-size: fluid(18, 20);
+    }
   }
 }

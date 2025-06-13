@@ -22,10 +22,6 @@
     z-index: 22;
     max-width: 45%;
 
-    &_sphe {
-      right: 0;
-    }
-
     @include large {
       max-width: 60%;
       bottom: 0;
@@ -39,6 +35,23 @@
 
     @include x-small {
       max-width: 100%;
+    }
+
+    &_sphe {
+      right: 0;
+    }
+    &_attach-top {
+      bottom: unset;
+      top: 0;
+
+      @include large {
+        max-width: 60%;
+        bottom: 0;
+        right: unset;
+        top: unset;
+        left: 0;
+        transform: translateX(0) rotate(180deg);
+      }
     }
   }
 }
