@@ -64,7 +64,8 @@
     height: 100%;
     overflow: auto;
     display: inline-block;
-    border-radius: rem(20);
+    border: rem(2) solid var(--color-blue);
+    border-radius: var(--border-radius-lg);
   }
   &__content {
     padding: rem(60) rem(24) rem(24);

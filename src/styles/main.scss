@@ -2,6 +2,7 @@
 @use "fonts";
 @use "variables";
 @use "utils";
+@use "typography";
 @use "globals";
 @use "helpers" as *;
 
@@ -55,5 +56,3 @@
 @use "./components/cards";
 @use "./components/dark-grid-mul-rows";
 @use "./components/columns-with-columns-list";
-
-

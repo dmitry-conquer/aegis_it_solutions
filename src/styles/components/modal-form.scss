@@ -3,11 +3,12 @@
 .form-modal {
   &__content {
     background-color: var(--color-dark);
+ 
   }
 
   &__title {
     color: var(--color-white);
-    text-align: center;
+    text-align: center !important;
     font-size: rem(28);
     font-weight: 600;
     line-height: 1.2;
