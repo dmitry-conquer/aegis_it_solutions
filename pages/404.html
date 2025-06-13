@@ -8,7 +8,17 @@
   <body>
     <div class="wrapper">
       {{> header}}
-      <main>Not Found</main>
+      <main>
+        <section class="not-found">
+          <div class="not-found__container container" style="background-image: url(&quot;/images/404.png&quot;)">
+            <div class="not-found__content">
+              <h1>Oops… It looks like this page has been encrypted — and we’ve lost the key.</h1>
+              <p>But don’t worry, our cybersecurity team is on it.</p>
+              <a href="/" aria-label="Back to Homepage" class="button">Back to Homepage</a>
+            </div>
+          </div>
+        </section>
+      </main>
       {{> footer}}
     </div>
     <script type="module" src="/src/scripts/main.ts" defer></script>

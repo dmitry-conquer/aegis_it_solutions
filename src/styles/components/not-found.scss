@@ -1,0 +1,64 @@
+@use "../helpers/" as *;
+
+.not-found {
+  margin-bottom: fluid(40, 80);
+  padding-left: rem(20);
+  padding-right: rem(20);
+
+  &__container {
+    background-color: var(--color-dark);
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: center;
+    padding: fluid(55, 300) fluid(24, 64);
+    background-position: 100% center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @media (max-width: rem(1600)) {
+      margin: 0 auto;
+      justify-content: center;
+      background-position: bottom;
+      padding-top: rem(60);
+      padding-bottom: rem(400);
+      background-size: 60%;
+
+      .not-found__content {
+        text-align: center;
+        h1 {
+          text-align: center !important;
+        }
+      }
+    }
+
+    @include medium {
+      padding-bottom: rem(350);
+      background-size: 70%;
+    }
+
+    @include small {
+      background-size: 100%;
+    }
+
+    @media (max-width: rem(450)) {
+      background-size: 140%;
+    }
+  }
+
+  &__content {
+    max-width: rem(820);
+    h1 {
+      color: var(--color-white);
+      font-size: fluid(32, 56);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: rem(24);
+    }
+
+    p {
+      color: var(--color-white);
+      margin-bottom: rem(24);
+    }
+  }
+}
