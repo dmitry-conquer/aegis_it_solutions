@@ -1,0 +1,93 @@
+@use "../helpers/" as *;
+
+.columns-with-columns-list {
+  &__container {
+  }
+
+  &__columns {
+    display: flex;
+    gap: rem(20);
+
+    @include large {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    flex: 0 1 50%;
+    border-radius: var(--border-radius-md);
+    padding: fluid(24, 40);
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 100% auto;
+
+    &_column-list {
+      ul {
+        margin-bottom: rem(16);
+        columns: 2;
+        -moz-columns: 2;
+        -webkit-columns: 2;
+      }
+
+      @include small {
+        ul {
+          columns: 1;
+          -moz-columns: 1;
+          -webkit-columns: 1;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      h2 {
+        color: var(--color-accent);
+      }
+    }
+    &:nth-child(2) {
+      h2 {
+        color: var(--color-blue);
+      }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: fluid(24, 28);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: rem(12);
+    }
+
+    strong,
+    b {
+      font-weight: 700;
+    }
+    p,
+    li {
+      font-weight: 300;
+    }
+    p {
+      margin-bottom: rem(12);
+    }
+    ul {
+      padding-left: rem(24);
+    }
+    li {
+      list-style-type: disc;
+      list-style-position: outside;
+
+      &:not(:last-child) {
+        margin-bottom: rem(12);
+      }
+
+      &::marker {
+        font-size: rem(14);
+      }
+    }
+
+    @include large {
+      flex: 0 1 auto;
+    }
+  }
+}
