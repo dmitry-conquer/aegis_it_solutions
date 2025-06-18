@@ -1,16 +1,15 @@
 @use "../helpers/" as *;
 
 .simple-rows {
-  &__container {
-  }
-
-  &__body {
-  }
-
   &__row {
     &:not(:last-child) {
       margin-bottom: fluid(24, 40);
     }
+  }
+
+  &__footer-text {
+    margin-top: fluid(24, 40);
+    text-align: center;
   }
 }
 
@@ -83,7 +82,6 @@
 
     a:last-child {
       color: var(--color-blue);
-      text-align: center;
       font-size: rem(22);
       font-weight: 600;
       line-height: 1.2;

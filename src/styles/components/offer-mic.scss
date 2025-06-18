@@ -1,6 +1,19 @@
 @use "../helpers" as *;
 
 .offer-mic {
+  &_prevent-one-line-item {
+    .offer-mic__item {
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8) {
+        flex: 0 1 calc(50% - rem(16)) !important;
+        @include medium {
+          flex: 0 1 100% !important;
+        }
+      }
+    }
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -58,5 +71,6 @@
     margin-top: fluid(20, 40);
   }
 
-  &__button {}
+  &__button {
+  }
 }

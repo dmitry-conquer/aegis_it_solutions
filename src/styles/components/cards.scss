@@ -92,6 +92,11 @@
   }
 
   &__footer-item {
+    flex: 0 1 50%;
+
+    @include medium {
+      flex: 0 1 auto;
+    }
     p {
       font-weight: 300;
       font-size: fluid(18, 20);

@@ -24,7 +24,7 @@
 
   &__columns {
     display: flex;
-    gap: rem(20);
+    gap: rem(20) rem(40);
     align-items: center;
 
     @include large {
@@ -77,6 +77,10 @@
       display: flex;
       flex-direction: column;
     }
+  }
+
+  &__column-text {
+    margin-bottom: rem(12);
   }
 
   &__column-item {
