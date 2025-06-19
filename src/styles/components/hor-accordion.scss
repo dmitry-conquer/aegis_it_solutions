@@ -15,6 +15,9 @@
 
   &__header-content {
     flex: 0 1 rem(1121);
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(24, 32);
     h2 {
       text-align: left;
     }
@@ -109,9 +112,13 @@
   &__item-content {
     display: none;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     padding-bottom: rem(24);
-    text-align: center;
+    text-align: left;
+
+    p:has(img) {
+      align-self: center;
+    }
   }
 
   &__mob-accordion {

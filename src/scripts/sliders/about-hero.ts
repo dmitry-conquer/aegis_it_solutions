@@ -18,7 +18,7 @@ export default class AboutHeroSlider {
       parallax: true,
       autoplay: {
         delay: 3500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       mousewheel: {
         releaseOnEdges: true,

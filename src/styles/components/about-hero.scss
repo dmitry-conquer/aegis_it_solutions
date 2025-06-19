@@ -86,7 +86,6 @@
   }
   &__aside-item {
     text-align: right;
-    color: var(--color-white);
     writing-mode: vertical-lr;
     transform: rotate(180deg);
     display: flex;
@@ -96,6 +95,8 @@
     position: relative;
     top: rem(-14);
     font-size: fluid(14, 28);
+    transition: color 0.3s ease;
+    color: gray;
 
     @include large {
       top: rem(14);
@@ -107,12 +108,14 @@
     }
 
     &:nth-child(1) {
+      color: var(--color-white) !important;
       &::after {
         background-color: var(--color-white) !important;
       }
     }
 
     &.active {
+      color: var(--color-white);
       &::after {
         background-color: var(--color-white);
       }

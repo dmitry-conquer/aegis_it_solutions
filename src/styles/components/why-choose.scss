@@ -27,9 +27,9 @@
         background-color: var(--color-blue);
         top: 50%;
         transform: translateY(-50%);
-        left: rem(38);
+        left: 2.1rem;
         @include x-small {
-          left: rem(31);
+          left: 2.1rem;
           height: 80%;
           transform: translateY(-55%);
         }
@@ -47,8 +47,8 @@
         &::before {
           content: counter(whychoose-counter);
           flex-shrink: 0;
-          width: rem(60);
-          height: rem(60);
+          width: 3.25rem;
+          height: 3.25rem;
           background-color: var(--color-blue);
           color: var(--color-white);
           display: flex;

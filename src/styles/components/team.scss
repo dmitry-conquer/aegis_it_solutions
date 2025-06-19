@@ -93,6 +93,8 @@
 
   &__thumbs-slider-slide-image {
     transition: transform 0.5s ease;
+    max-height: 12.5rem;
+    object-fit: contain;
   }
 
   &__thumbs-slider-slide-name {
