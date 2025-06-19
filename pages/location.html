@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>location</title>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="wrapper">
+      {{> header}}
+      <main>
+        <section
+          class="services-hero services-hero_location services-hero_centered base-hero base-section base-section_dark"
+        >
+          <div class="services-hero__container base-hero__container base-section__container">
+            <div class="services-hero__content base-hero__content">
+              <span class="base-hero__label">Managed IT Services</span>
+              <h1>IT, Cybersecurity, and Compliance Experts in</h1>
+              <p>
+                Fort Lauderdale's Trusted IT Partner for Managed Services, Cybersecurity, <br />
+                and Compliance
+              </p>
+              <div class="services-hero__buttons">
+                <a href="#" class="button">Get Protected Today</a>
+                <a href="#" class="button button_black">Schedule Consultation</a>
+              </div>
+            </div>
+            <div class="services-hero__image">
+              <img src="/images/loca-hero.png" alt="" loading="lazy" />
+            </div>
+          </div>
+        </section>
+
+        <section class="cta cta_has-link">
+          <div class="cta__container container">
+            <div class="cta__row">
+              <div class="cta__image">
+                <img src="/images/front/cta.png" alt="" loading="lazy" />
+              </div>
+              <div class="cta__content">
+                <div class="cta__text">
+                  <h2>Stay Ahead of Regulatory Requirements</h2>
+                  <p>
+                    With Aegis IT Solutions, compliance is not just a one-time event — it’s a strategic advantage. We
+                    help you build a culture of security, ensure continuous compliance, and reduce business risk while
+                    positioning you for growth.
+                  </p>
+                </div>
+                <div class="cta__buttons">
+                  <a href="#" class="button">551-299-2001</a>
+                  <a href="#" class="button button_black">Send an email</a>
+                  <a href="#" class="button-arrow cta__button-arrow inline-icon inline-icon_blue-arrow"
+                    >Schedule Your Compliance Consultation</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta">
+          <div class="cta__container container">
+            <div class="cta__row">
+              <div class="cta__image">
+                <img src="/images/front/cta.png" alt="" loading="lazy" />
+              </div>
+              <div class="cta__content">
+                <div class="cta__text">
+                  <h2>Stay Ahead of Regulatory Requirements</h2>
+                  <p>
+                    With Aegis IT Solutions, compliance is not just a one-time event — it’s a strategic advantage. We
+                    help you build a culture of security, ensure continuous compliance, and reduce business risk while
+                    positioning you for growth.
+                  </p>
+                </div>
+                <a href="#" class="button-arrow cta__button-arrow inline-icon inline-icon_blue-arrow"
+                  >Schedule Your Compliance Consultation</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+      <script>
+        const backendData = {
+          smoothScroll: true,
+        };
+      </script>
+      {{> footer}}
+    </div>
+    <script type="module" src="/src/scripts/main.ts" defer></script>
+  </body>
+</html>

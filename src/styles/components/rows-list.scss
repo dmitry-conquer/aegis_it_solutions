@@ -27,6 +27,13 @@
     gap: rem(20) rem(40);
     align-items: center;
 
+    &_reverse {
+      flex-direction: row-reverse;
+      @include large {
+        flex-direction: column;
+      }
+    }
+
     @include large {
       align-items: stretch;
       flex-direction: column;

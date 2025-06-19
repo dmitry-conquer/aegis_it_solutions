@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 
 .header {
-  z-index: 50;
+  z-index: 99999;
   width: 100%;
   position: fixed;
   top: 0;
@@ -125,16 +125,7 @@
     align-items: center;
   }
   &__cta {
-    white-space: nowrap;
-    color: var(--color-blue);
-    line-height: 1.2;
-    font-size: rem(18);
-    font-weight: 600;
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: auto;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
+  
   }
   &__button {
     width: rem(45);

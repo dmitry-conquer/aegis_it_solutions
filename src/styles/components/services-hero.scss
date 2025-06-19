@@ -1,6 +1,53 @@
 @use "../helpers" as *;
 
 .services-hero {
+  &_location {
+    .services-hero__container {
+      position: relative;
+
+      @include medium {
+        flex-direction: column;
+        row-gap: rem(24);
+      }
+
+      @include x-small {
+        padding-bottom: rem(24) !important;
+      }
+    }
+    .services-hero__content {
+      max-width: 49%;
+
+      @include medium {
+        max-width: 100%;
+      }
+    }
+    .services-hero__image {
+      padding-top: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 49%;
+      height: 100%;
+      flex: 0 0 49%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: auto;
+        object-position: right;
+      }
+
+      @include medium {
+        position: static;
+        width: 100%;
+        height: 100%;
+        flex: 0 1 auto;
+        img {
+          object-position: center;
+        }
+      }
+    }
+  }
+
   &_centered {
     .services-hero__container {
       align-items: center;
@@ -68,6 +115,17 @@
       width: 100%;
       height: 100%;
       object-fit: contain;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    position: relative;
+    z-index: 222;
+    gap: rem(16) rem(24);
+
+    @include small {
+      flex-direction: column;
     }
   }
 }
