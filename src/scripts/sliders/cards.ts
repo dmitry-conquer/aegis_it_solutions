@@ -20,6 +20,11 @@ export default class CardsSlider {
       grabCursor: true,
       parallax: true,
       spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
       cardsEffect:
         effect === "cards"
           ? { perSlideOffset: window.innerWidth >= 1024 ? 11 : 7, rotate: false, slideShadows: false }
