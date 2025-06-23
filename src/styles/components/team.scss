@@ -14,7 +14,7 @@
     p {
       font-weight: 300;
       line-height: 1.4;
-      font-size: fluid(14, 20);
+      font-size: fluid(14, 19);
       @include large {
         font-size: rem(16);
       }
@@ -31,8 +31,6 @@
 
   &__main-slider-slide-content {
     flex: 0 0 50%;
-    max-height: rem(450);
-    overflow: auto;
 
     @include x-large {
       max-height: unset;

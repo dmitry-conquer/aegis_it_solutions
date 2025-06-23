@@ -260,7 +260,6 @@
     flex: 0 1 rem(394);
     display: flex;
     flex-direction: column;
-    align-items: center;
     @include x-large {
       justify-content: flex-end;
       flex: 0 1 100%;
@@ -275,9 +274,9 @@
   &__info-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     row-gap: rem(16);
-    text-align: center;
+    text-align: left;
   }
   &__info-title {
     color: var(--color-blue);
