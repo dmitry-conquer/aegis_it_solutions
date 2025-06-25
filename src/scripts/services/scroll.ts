@@ -7,12 +7,14 @@ export default class Scroll {
   private lenis: Lenis | null = null;
 
   public initSmoothScroll() {
+    const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+    if (isTouchDevice) return;
+
     this.lenis = new Lenis({
       autoRaf: true,
       anchors: true,
     });
-
-    // this.bubbleScrollAtEdge();
   }
 
   public initAOS() {

@@ -17,13 +17,11 @@ export default class CardsSlider {
     return {
       speed: 800,
       effect,
-      grabCursor: true,
-      parallax: true,
       spaceBetween: 30,
       loop: true,
       autoplay: {
         delay: 3000,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
       cardsEffect:
         effect === "cards"
@@ -32,6 +30,11 @@ export default class CardsSlider {
       pagination: {
         el: ".cards-slider__pagination",
         clickable: true,
+        
+      },
+      navigation: {
+        nextEl: ".cards-slider__button_next",
+        prevEl: ".cards-slider__button_prev",
       },
       breakpoints: {
         320: {

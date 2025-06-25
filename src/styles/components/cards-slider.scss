@@ -1,6 +1,41 @@
 @use "../helpers/" as *;
 
 .cards-slider {
+  &__controls {
+    margin-top: fluid(24, 40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: fluid(16, 40);
+  }
+
+  &__pagination {
+    width: max-content !important;
+    margin-top: 0 !important;
+  }
+
+  &__button {
+    position: relative;
+    z-index: 99;
+    width: fluid(40, 50);
+    height: fluid(40, 50);
+    border-radius: 50%;
+    background-color: var(--color-blue);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+
+    @include hover {
+      background-color: var(--color-accent);
+    }
+    svg {
+      width: fluid(22, 28);
+      height: fluid(22, 28);
+      color: var(--color-white);
+    }
+  }
   &__container {
     background-color: var(--color-blue-light);
     background-repeat: no-repeat;
@@ -20,7 +55,6 @@
     margin: rem(-20) auto rem(-20) auto;
     padding: rem(20) 0;
     height: rem(470);
-
     @include small {
       height: auto;
       overflow: hidden;
@@ -29,6 +63,9 @@
 
   &__wrapper {
     height: 100%;
+    @media (hover: hover) {
+      pointer-events: none !important;
+    }
   }
 }
 
