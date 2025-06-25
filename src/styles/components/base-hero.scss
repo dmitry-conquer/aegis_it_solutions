@@ -31,6 +31,10 @@
     line-height: 1.2;
     font-weight: 400;
     margin-bottom: rem(24);
+
+    @media (max-width: rem(1460)) {
+      font-size: fluid(32, 60);
+    }
   }
 
   p {
