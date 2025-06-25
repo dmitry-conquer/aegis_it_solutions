@@ -21,7 +21,7 @@ export class Header {
   private panels: HTMLElement[];
   private mediaQuery: MediaQueryList;
   private isMobileView: boolean;
-  private isTouchDevice: boolean;
+  // private isTouchDevice: boolean;
   private historyStack: string[] = ["main"];
   private scroll: any;
 
@@ -39,7 +39,7 @@ export class Header {
     ) as HTMLElement[];
     this.mediaQuery = window.matchMedia("(max-width: 1400px)");
     this.isMobileView = this.mediaQuery.matches;
-    this.isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    // this.isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
     this.init();
   }
 
@@ -157,9 +157,7 @@ export class Header {
   }
 
   private handleInteraction = (index: number) => {
-    if (this.isTouchDevice || this.isMobileView) {
-      this.toggleSubmenu(index);
-    }
+    this.toggleSubmenu(index);
   };
 
   private bindEvents(): void {
