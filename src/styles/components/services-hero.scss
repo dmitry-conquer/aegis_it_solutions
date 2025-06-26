@@ -1,6 +1,14 @@
 @use "../helpers" as *;
 
 .services-hero {
+  &--resources {
+    .services-hero__container {
+      padding: fluid(36, 64) fluid(24, 64) fluid(36, 64) fluid(24, 64) !important;
+      @include x-small {
+        padding-bottom: 0 !important;
+      }
+    }
+  }
   &_location {
     .services-hero__container {
       position: relative;

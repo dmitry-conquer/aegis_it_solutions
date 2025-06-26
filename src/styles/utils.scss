@@ -45,6 +45,7 @@
   column-gap: var(--gap);
 
   &::after {
+    transition: transform 0.3s ease;
     width: var(--size);
     height: var(--size);
     content: "";

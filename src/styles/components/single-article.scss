@@ -1,0 +1,99 @@
+@use "../helpers/" as *;
+
+.single-article {
+  &__hero {
+    padding-top: 0 !important;
+  }
+  &__hero-container {
+    position: relative;
+    background-color: var(--color-dark);
+    @include large {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__hero-content {
+    max-width: 50%;
+    padding: fluid(116, 250) 0 fluid(116, 250) 0;
+    @include large {
+      max-width: 100%;
+      padding: rem(100) 0 rem(400) 0;
+    }
+  }
+  &__hero-label {
+    color: var(--color-accent);
+    font-size: fluid(20, 36);
+    line-height: 1.2;
+  }
+  &__title {
+    font-size: fluid(32, 80);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+
+    @media (max-width: rem(1600)) {
+      font-size: fluid(32, 60);
+    }
+  }
+  &__hero-image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 46%;
+    height: 100%;
+
+    @include x-large {
+      width: 40%;
+    }
+
+    @include large {
+      width: 100%;
+      top: unset;
+      bottom: 0;
+      height: fluid(300, 400);
+    }
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    @include small {
+      padding: 0;
+    }
+  }
+  &__content-container {
+  }
+  &__content-outer {
+    background-color: #fbf9f9;
+    padding: rem(20);
+
+    @include small {
+      padding: 0;
+    }
+  }
+  &__content-inner {
+    background-color: var(--color-white);
+    padding: rem(20);
+  }
+  &__content-inner-container {
+    max-width: rem(1180);
+    margin: 0 auto;
+  }
+
+  &__content-date {
+    color: var(--color-dark-gray);
+    text-align: center;
+    font-size: rem(16);
+    line-height: 1.25;
+    margin-bottom: rem(34);
+  }
+  &__content-text {
+    padding: 0 !important;
+    color: var(--color-dark-gray);
+    line-height: 1.4;
+    font-weight: 300;
+  }
+}
