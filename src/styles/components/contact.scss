@@ -31,13 +31,14 @@
   }
 
   &__content-inner {
+    max-width: rem(782);
     font-weight: 300 !important;
     ul {
       margin-top: rem(10);
+      padding-left: rem(20);
 
       li {
         list-style-type: disc;
-        list-style-position: inside;
 
         &::marker {
           font-size: rem(12);

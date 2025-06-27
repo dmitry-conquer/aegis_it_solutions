@@ -69,6 +69,7 @@
   &__content-outer {
     background-color: #fbf9f9;
     padding: rem(20);
+    border-radius: rem(14);
 
     @include small {
       padding: 0;
@@ -77,6 +78,7 @@
   &__content-inner {
     background-color: var(--color-white);
     padding: rem(20);
+    border-radius: rem(14);
   }
   &__content-inner-container {
     max-width: rem(1180);
