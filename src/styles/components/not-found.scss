@@ -43,6 +43,37 @@
     @media (max-width: rem(450)) {
       background-size: 140%;
     }
+
+    &--contact {
+      @media (max-width: rem(1600)) {
+        margin: 0;
+        justify-content: flex-start;
+        background-position: 100% center;
+        padding-top: rem(60);
+        padding-bottom: rem(400);
+        background-size: contain;
+
+        .not-found__content {
+          text-align: left;
+          h1 {
+            text-align: left !important;
+          }
+        }
+      }
+
+      @include medium {
+        padding-bottom: rem(350);
+        background-size: contain;
+        background-position: bottom right;
+      }
+      @include small {
+        background-size: contain;
+      }
+
+      @media (max-width: rem(450)) {
+        background-size: 135%;
+      }
+    }
   }
 
   &__content {
