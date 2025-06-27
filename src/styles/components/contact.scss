@@ -15,6 +15,7 @@
     padding: fluid(16, 24);
     background-color: var(--color-dark);
     flex-shrink: 0;
+    padding-bottom: 0;
 
     @include above-large {
       flex-basis: rem(560);
