@@ -54,4 +54,13 @@
       }
     }
   }
+
+  &__buttons {
+    display: flex;
+    gap: rem(16);
+
+    @include small {
+      flex-direction: column;
+    }
+  }
 }
