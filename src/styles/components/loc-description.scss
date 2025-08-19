@@ -74,6 +74,7 @@
     min-height: rem(135);
     padding: rem(16);
     background-color: var(--color-blue-light);
+    border-radius: 0 0 rem(6) rem(6);
 
     display: none;
     &.is-active {
