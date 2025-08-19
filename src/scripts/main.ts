@@ -1,6 +1,6 @@
 import "../styles/main.scss";
 import { AboutHero, Cards, MeetExperts, Partners, Team } from "./sliders";
-import { Accordion, Header, BackTopButton, Members, ScrollHeader, HorizontalAccordion } from "./components";
+import { Accordion, Header, BackTopButton, Members, ScrollHeader, HorizontalAccordion, Tabs } from "./components";
 import { Scroll } from "./services";
 import { initModal } from "./utils";
 
@@ -25,6 +25,7 @@ const initUIComponents = () => {
   new ScrollHeader(30);
   new Members(scroll);
   new Accordion();
+  new Tabs();
   HorizontalAccordion();
   initModal(scroll);
 };
