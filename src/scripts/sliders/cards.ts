@@ -21,7 +21,8 @@ export default class CardsSlider {
       loop: true,
       autoplay: {
         delay: 3000,
-        disableOnInteraction: true,
+        pauseOnMouseEnter: true,
+        disableOnInteraction: false,
       },
       cardsEffect:
         effect === "cards"
@@ -30,7 +31,6 @@ export default class CardsSlider {
       pagination: {
         el: ".cards-slider__pagination",
         clickable: true,
-        
       },
       navigation: {
         nextEl: ".cards-slider__button_next",
