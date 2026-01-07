@@ -43,6 +43,7 @@
     "micromodal": "^0.6.1",
     "mmenu-js": "^9.3.0",
     "mmenu-light": "^3.2.2",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "typed.js": "^2.1.0"
   }
 }

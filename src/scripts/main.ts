@@ -1,6 +1,15 @@
 import "../styles/main.scss";
 import { AboutHero, Cards, MeetExperts, Partners, Team } from "./sliders";
-import { Accordion, Header, BackTopButton, Members, ScrollHeader, HorizontalAccordion, Tabs } from "./components";
+import {
+  Accordion,
+  Header,
+  BackTopButton,
+  Members,
+  ScrollHeader,
+  HorizontalAccordion,
+  Tabs,
+  UseTyped,
+} from "./components";
 import { Scroll } from "./services";
 import { initModal } from "./utils";
 
@@ -34,4 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSliders();
   initUIComponents();
   initScrollServices();
+
+  const typedElements = document.querySelectorAll<HTMLElement>("[data-typed-string]");
+  typedElements.forEach(el => new UseTyped(el));
 });

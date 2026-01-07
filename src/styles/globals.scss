@@ -81,3 +81,38 @@ b {
     display: none !important;
   }
 }
+
+[data-text-expansion] {
+  &:hover {
+    p {
+      -webkit-line-clamp: unset;
+    }
+  }
+}
+
+[data-text-expansion="2"] {
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+[data-text-expansion="3"] {
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+[data-text-expansion="4"] {
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+}
