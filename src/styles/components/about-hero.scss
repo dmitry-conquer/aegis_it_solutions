@@ -36,6 +36,13 @@
   }
 
   &__slider-outer {
+    max-width: rem(828);
+    margin-left: auto;
+
+    @include large {
+      max-width: 100%;
+    }
+
     @include small {
       padding-bottom: rem(95);
     }
@@ -62,14 +69,15 @@
 
   &__aside {
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%) translateX(20%) rotate(90deg);
+    left: 0;
+    bottom: rem(100);
+    transform: translateY(-50%) translateX(-20%) rotate(90deg);
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 
     @include large {
       top: unset;
+      left: unset;
       right: 50%;
       bottom: rem(50);
       transform: translateY(0) translateX(50%) rotate(0);
@@ -83,6 +91,11 @@
   &__aside-items {
     display: flex;
     justify-content: space-around;
+    transform: translateY(rem(26));
+
+    @include large {
+      transform: unset;
+    }
   }
   &__aside-item {
     text-align: right;
@@ -97,6 +110,7 @@
     font-size: fluid(14, 28);
     transition: color 0.3s ease;
     color: gray;
+    flex-direction: row-reverse;
 
     @include large {
       top: rem(14);

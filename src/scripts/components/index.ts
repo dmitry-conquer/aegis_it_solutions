@@ -6,3 +6,4 @@ export { default as ScrollHeader } from "./ScrollHeader";
 export { default as Tabs } from "./Tabs";
 export { default as HorizontalAccordion } from "./HorizontalAccordion";
 export { UseTyped } from "./Typed";
+export { Offer } from "./Offer";

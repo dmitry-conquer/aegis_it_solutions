@@ -1,0 +1,41 @@
+@use "../helpers/" as *;
+
+.offer-modal {
+  &__body {
+  }
+
+  &__inner {
+    max-width: rem(1480);
+    border: none;
+
+  }
+
+  &__content {
+    color: var(--color-white);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: fluid(24, 32);
+    padding-top: fluid(60, 112);
+  }
+
+  &__close {
+    right: fluid(24, 32);
+    top: fluid(24, 32);
+    padding: rem(5);
+
+    @include hover {
+      svg {
+        color: inherit;
+      }
+    }
+    svg {
+      color: var(--color-white);
+      width: rem(32);
+      height: rem(32);
+    }
+  }
+
+  &__info {
+  }
+}

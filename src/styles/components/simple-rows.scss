@@ -80,7 +80,7 @@
     padding: fluid(16, 40);
     border-radius: var(--border-radius-md);
 
-    a:last-child {
+    a:last-child:not(.button) {
       color: var(--color-blue);
       font-size: rem(22);
       font-weight: 600;

@@ -64,6 +64,7 @@ export class Header {
       target.closest(this.selectors.overlay) ||
       target.closest("[data-micromodal-trigger]") ||
       target.closest("[data-member]") ||
+      target.closest("[data-offers-button]") ||
       target.closest(this.selectors.itemHasSubmenu)
     )
       return;

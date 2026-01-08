@@ -9,6 +9,7 @@ import {
   HorizontalAccordion,
   Tabs,
   UseTyped,
+  Offer,
 } from "./components";
 import { Scroll } from "./services";
 import { initModal } from "./utils";
@@ -33,6 +34,7 @@ const initUIComponents = () => {
   new BackTopButton(900, "top");
   new ScrollHeader(30);
   new Members(scroll);
+  new Offer(scroll);
   new Accordion();
   new Tabs();
   HorizontalAccordion();
