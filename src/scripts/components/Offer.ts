@@ -20,7 +20,7 @@ export class Offer {
     this.rootElement = document.querySelector(this.selectors.root) as HTMLElement;
     this.modalElement = document.getElementById(this.selectors.modalId) as HTMLElement;
     this.listElement = this.rootElement?.querySelector(this.selectors.list) as HTMLElement;
-    this.modalSlotElement = this.modalElement.querySelector(this.selectors.modalSlot) as HTMLElement;
+    this.modalSlotElement = this.modalElement?.querySelector(this.selectors.modalSlot) as HTMLElement;
 
     if (!this.rootElement || !this.modalElement || !this.modalSlotElement) {
       return;
@@ -48,6 +48,7 @@ export class Offer {
     const targetSlot = items[id] as HTMLElement;
     if (!targetSlot) return;
     this.modalSlotElement!.innerHTML = targetSlot.innerHTML;
+
 
     openModal(this.selectors.modalId, this.scroll);
   }
