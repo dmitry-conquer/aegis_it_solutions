@@ -6,16 +6,19 @@ export default class Members {
     member: "[data-member]",
     slot: "[data-modal-slot]",
     fullInfo: "[data-member-full]",
+    modalId: "expert-modal",
   };
   private rootElement: HTMLElement;
   private slotElement: HTMLElement;
   private scroll: any;
+  private modalElement: HTMLElement;
 
   constructor(scroll: any) {
     this.scroll = scroll;
     this.rootElement = document.querySelector(this.selectors.root) as HTMLElement;
-    this.slotElement = document.querySelector(this.selectors.slot) as HTMLElement;
-    if (!this.rootElement || !this.slotElement) return;
+    this.modalElement = document.getElementById(this.selectors.modalId) as HTMLElement;
+    this.slotElement = this.modalElement?.querySelector(this.selectors.slot) as HTMLElement;
+    if (!this.rootElement || !this.modalElement || !this.slotElement) return;
     this.bindEvents();
   }
 
@@ -26,7 +29,7 @@ export default class Members {
     const memberInfoElement = memberCard.querySelector(this.selectors.fullInfo) as HTMLElement;
     if (!memberInfoElement) return;
     this.slotElement.innerHTML = memberInfoElement.innerHTML;
-    openModal("expert-modal", this.scroll);
+    openModal(this.selectors.modalId, this.scroll);
   };
 
   private bindEvents() {
