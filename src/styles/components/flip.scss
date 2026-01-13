@@ -1,0 +1,134 @@
+@use "../helpers/" as *;
+
+.flip {
+  &__list {
+    display: flex;
+    gap: rem(20);
+    @include small {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
+
+  &__item {
+    border-radius: var(--border-radius-lg);
+    background-color: var(--color-dark);
+    padding: fluid(24, 40);
+    color: var(--color-white);
+
+    &_1 {
+      min-height: rem(500);
+      @include small {
+        min-height: unset;
+      }
+    }
+    &_2 {
+      min-height: rem(240);
+      @include small {
+        min-height: unset;
+      }
+    }
+    &_3 {
+      min-height: rem(340);
+      @include small {
+        min-height: unset;
+      }
+    }
+    &_4 {
+      min-height: rem(400);
+      background-size: auto;
+      background-position: right;
+      @include small {
+        min-height: unset;
+      }
+    }
+
+    h3 {
+      color: var(--color-white);
+      margin-bottom: rem(12);
+      text-align: center;
+    }
+    p {
+      font-weight: 300;
+    }
+  }
+}
+
+.flip-item {
+  border-radius: var(--border-radius-lg);
+  padding: 0;
+  background: none;
+
+  &__hidden {
+    display: block;
+    @include above-small {
+      display: none;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    min-height: inherit;
+    border-radius: inherit;
+  }
+
+  &__front,
+  &__back {
+    position: static;
+    inset: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: fluid(24, 40);
+    border-radius: inherit;
+    background-color: var(--color-dark);
+    text-align: center;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    transform: none;
+  }
+
+  &__back {
+    display: none;
+  }
+
+  @include above-small {
+    position: relative;
+    perspective: 1200px;
+
+    &:hover {
+      .flip-item__content {
+        transform: rotateY(180deg);
+      }
+    }
+
+    &__content {
+      position: relative;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 1.2s ease;
+    }
+
+    &__front,
+    &__back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      transform: rotateY(0deg);
+    }
+
+    &__back {
+      display: flex;
+      justify-content: center;
+      transform: rotateY(180deg);
+    }
+  }
+}
