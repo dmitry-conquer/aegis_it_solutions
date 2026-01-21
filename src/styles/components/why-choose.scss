@@ -4,6 +4,7 @@
   &__content {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     gap: rem(28) rem(43);
     @include large {
       flex-direction: column;
@@ -16,6 +17,7 @@
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow);
     padding: fluid(16, 24);
+    max-width: rem(735);
     ol {
       counter-reset: why-choose-counter;
       position: relative;
