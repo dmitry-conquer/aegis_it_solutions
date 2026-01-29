@@ -1,0 +1,89 @@
+@use "../helpers/" as *;
+
+.compare {
+  &__container {
+  }
+
+  &__header {
+  }
+
+  &__title {
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: rem(24);
+    justify-content: center;
+
+    @include large {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__content {
+    flex: 0 1 rem(512);
+
+    @include large {
+      flex: 0 1 auto;
+    }
+
+    h3 {
+      margin-bottom: rem(16);
+    }
+  }
+
+  &__columns {
+    flex: 0 1 rem(1119);
+    border-radius: 16px;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include large {
+      flex: 0 1 auto;
+    }
+
+    @include medium {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__column {
+    text-align: center;
+    padding-block: fluid(24, 40) rem(24);
+
+    &:nth-child(1) {
+      background-color: var(--color-dark);
+
+      color: var(--color-white);
+      .compare__column-title {
+        color: var(--color-white);
+      }
+    }
+    &:nth-child(2) {
+      background-color: var(--color-accent);
+
+      color: var(--color-dark);
+      .compare__column-title {
+        color: var(--color-dark);
+      }
+    }
+  }
+
+  &__column-title {
+    font-size: fluid(20, 24);
+    margin-bottom: fluid(24, 40);
+  }
+
+  &__list {
+    li {
+      padding: fluid(8, 16) fluid(16, 40);
+      border-top: 1px solid rgba(69, 93, 117, 0.25);
+
+      font-size: fluid(18, 20);
+    }
+  }
+}
