@@ -1,6 +1,17 @@
 @use "../helpers/" as *;
 
 .simple-rows {
+
+
+  &--stretch {
+    .simple-rows__row {
+      align-items: stretch;
+    }
+    .simple-row__content-inner {
+      height: 100%;
+    }
+  }
+
   &__row {
     &:not(:last-child) {
       margin-bottom: fluid(24, 40);

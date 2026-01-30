@@ -89,6 +89,10 @@
 
   &__button {
     white-space: nowrap;
+
+    @include small {
+      white-space: normal;
+    }
   }
 
   &__button-arrow {
