@@ -1,6 +1,12 @@
 @use "../helpers/" as *;
 
 .dark-columns {
+  &--3 {
+    .dark-columns__column {
+      flex: 0 1 33.33333333333333%;
+    }
+  }
+
   &__container {
   }
 
@@ -62,11 +68,11 @@
     line-height: 1.2;
     margin-bottom: rem(12);
     &_accent {
-      color: var(--color-accent);
+      color: var(--color-blue);
     }
 
     &_blue {
-      color: var(--color-blue);
+      color: var(--color-accent);
     }
   }
 
@@ -80,10 +86,5 @@
   }
 
   &__row-item {
-    flex: 0 1 50%;
-
-    @include medium {
-      flex: 0 1 auto;
-    }
   }
 }
