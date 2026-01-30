@@ -80,6 +80,17 @@
     padding: fluid(16, 40);
     border-radius: var(--border-radius-md);
 
+    ul {
+      margin-bottom: rem(16);
+      list-style-type: disc;
+      list-style-position: inside;
+      li {
+        &:not(:last-child) {
+          margin-bottom: rem(8);
+        }
+      }
+    }
+
     a:last-child:not(.button) {
       color: var(--color-blue);
       font-size: rem(22);
